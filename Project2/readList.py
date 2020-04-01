@@ -6,7 +6,7 @@ class ReadList():
     @staticmethod
     def get_city():
         li = []
-        with open('/home/barbra/proj2/app/cities.csv') as csvin:
+        with open('./data/cities.csv') as csvin:
             read = [tuple(line) for line in csv.reader(csvin)]
         line = 0
         for row in read:
@@ -21,7 +21,7 @@ class ReadList():
 
     @staticmethod
     def get_cus():
-        with open('/home/barbra/proj2/app/cuisines.csv') as csvine:
+        with open('./data/cuisines.csv') as csvine:
             rd = list(csv.reader(csvine))
         y = []
         line = 0

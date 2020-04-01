@@ -1,6 +1,6 @@
 {% include 'base.html' %} 
 <style>
-   
+
     #middle {
         font-size: 30px;
         color: whitesmoke;
@@ -59,60 +59,59 @@
     </div>
 </div>
 <div class="parallax-container par">
+    <div class="centered text-center" style='z-index: 100'>
+        <h1 class="text-white">Input form</h1>
+            <form action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ form.city.label(id='middle') }}<br>
+                    {{form.city}}
+                    {% for error in form.city.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.cuisine.label(id='middle') }}<br>
+                    {{ form.cuisine }}<br>
+                    {% for error in form.cuisine.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.day.label(id='middle') }}<br>
+                    <select name="DAY">
+                        {% for choice, human in form.day.choices %}
+                        <option value="{{ choice }}">
+                        {{human}}
+                        </option>
+                        {% endfor %}
+                    </select><br>
+                    {% for error in form.day.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.time.label(id='middle') }}<br>
+                    {{ form.time(class_="background-color: whitesmoke") }}<br>
+                    {% for error in form.time.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>{{ form.submit(class_="text-center text-black text;") }}</p>
+            </form>
+
+        <div>
+            <button type="button">Go back Home</button>
+        </div>
+
+    </div>
     <div class="parallax">
         <img src="../static/images/p2.jpg" style="width: 100%;">
-        <div class="centered text-center">
-            <h1 class="text-white">Input form</h1>
-                <form action="" method="post" novalidate>
-                    {{ form.hidden_tag() }}
-                    <p>
-                        {{ form.city.label(id='middle') }}<br>
-                        {{form.city}}
-                        {% for error in form.city.errors %}
-                        <span style="color: red;">[{{ error }}]</span>
-                        {% endfor %}
-                    </p>
-                    <p>
-                        {{ form.cuisine.label(id='middle') }}<br>
-                        {{ form.cuisine }}<br>
-                        {% for error in form.cuisine.errors %}
-                        <span style="color: red;">[{{ error }}]</span>
-                        {% endfor %}
-                    </p>
-                    <p>
-                        {{ form.day.label(id='middle') }}<br>
-                        <select name="DAY">
-                            {% for choice, human in form.day.choices %}
-                            <option value="{{ choice }}">
-                            {{human}}
-                            </option>
-                            {% endfor %}
-                        </select><br>
-                        {% for error in form.day.errors %}
-                        <span style="color: red;">[{{ error }}]</span>
-                        {% endfor %}
-                    </p>
-                    <p>
-                        {{ form.time.label(id='middle') }}<br>
-                        {{ form.time(class_="background-color: whitesmoke") }}<br>
-                        {% for error in form.time.errors %}
-                        <span style="color: red;">[{{ error }}]</span>
-                        {% endfor %}
-                    </p>
-                    <p>{{ form.submit(class_="text-center text-black text;") }}</p>
-                </form>
-
-            <div>
-                <button type="button">Go back Home</button>
-            </div>
-
-        </div>
     </div>
 </div>
+
 <div class='divImg'>
-    <div>
-        <h1 class="text-center text-white heading">Output results come here</h1>
-    </div>
+    <h1 class="text-center text-white heading">Output results come here</h1>
 </div>
 <div class="parallax-container par">
     <div class="parallax">
