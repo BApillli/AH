@@ -20,7 +20,6 @@
 
     button {
         background-color: #e7e7e7;
-        border: none;
         color: black;
         text-align: center;
         font-size: 18px;
@@ -36,24 +35,49 @@
         background-color: whitesmoke;
         padding: 12px 18px;
     }
+
+    .Form_load {
+        width: 300px;
+        color: white;
+        border-radius: 2rem;
+        border-width: 2px;
+        border-color: white;
+        background-color: rgb(28, 24, 12);
+    }
+
+    .bite {
+        letter-spacing: .1em;
+        text-shadow: 0px 22px 1px rgba(0, 0, 0, 0.91);
+    }
+
+    .allow {
+        letter-spacing: .1em;
+        text-shadow: 0px 10px 0px rgba(0, 0, 0, 0.91);
+        font-weight: bolder;
+    }
+
 </style>
 
 <div class="parallax-container par">
+   <div class="centered">
+        <h1 class="text-center text-white bite" style='font-family: Permanent Marker; font-size: 50px;'>Need a Bite to Eat?</h1>
+        <br/>
+        <h3 class="text-center text-white allow" style='font-family: Quicksand; font-size: 25px'>Allow us to help satisfy your eating needs!</h3>
+    </div>
     <div class="parallax">
         <img src="../static/images/p1.jpg" style="width: 100%;">
-        <div class="centered">
-            <h1 class="text-center text-white">Name of Website</h1>
-            <h2 class="text-center text-white">Maybe add icons</h2>
-            <h3 class="text-center text-white">Maybe add slogan</h3>
-        </div>
     </div>
 </div>
 <div class='divImg'>
     <div = class="centered text-center">
-        <h1 class="text-center text-white heading">Welcome to ChowFind!</h1>
-        <h2 class="text-center text-white">Input the details so we can find you what to eat :P</h2>
+        <div class='text-center'>
+            <img src="../static/images/welcome_1.png" style='margin: auto; width: 200px; height: 230px;'>
+        </div>
+        <h2 class="text-center text-white heading" style='font-family: Quicksand;'>Welcome to <p class='Name' style='font-family: Fredericka the Great; font-size: 50px;'>FindMyTaste!</p></h2>
+        <h3 class="text-center text-white" style='font-family: Quicksand;'>Input the details so we can find you what to eat :P</h3>
+        <br/>
         <div style="text-align: center">
-            <button type="button" >Find My Taste!</button>
+            <button type="button" class='Form_load' style='font-family: Quicksand;'>Find My Taste!</button>
         </div>
 
     </div>

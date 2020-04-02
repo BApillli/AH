@@ -32,7 +32,8 @@
 }
 
 .navbar.scrolled {
-    background-color: #808080;
+    background-color: rgb(28, 24, 12);
+    box-shadow: 0px 3px 6px 0px black;
 }
 
 .par {
