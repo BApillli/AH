@@ -136,7 +136,38 @@
 <div class='container-fluid section' id='Output'>
     <div class="row">
         <div class='divImg'>
-            <h1 class="text-center text-white heading">Output results come here</h1>
+            <div>
+                <h1 class="text-center text-white heading">This must be the place!</h1>
+            </div>
+        
+            <div>
+                <h2 class= text-white>Bootleggers</h2>
+            </div>
+            
+            <address class = "text-center text-white font-size : 10">
+                13 Ryneveld St,<br>
+                Stellenbosch,<br>
+                Cape Town<br>
+                7600
+             </address>
+            <div>
+                    <div>
+                 <h4 class ="text-white">Star Rating:</h4>
+                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star"></span>
+                 <span class="fa fa-star"></span>
+                 </div>
+                <h4 class = "text-white" >Review:</h4>
+                <div class="chip">
+                    <img src="avatar.png" alt="Person" class="avatar">             
+                  </div> 
+                  <div class="boxed text-white" >
+                    Coffee is really good. The staff are quite friendly. However, I had an incident where the salt shakers lid was loose and I ended up with salt all over my food and the table. It was quite disappointing that I had to ask for a replacement meal (no one offered or tried to compensate for the mishap. Instead I was made to feel as if it was my own fault.) I also asked someone to clean up the salt that fell on table, the person, wiped the salt up, put it back into the salt shaker and left the same shaker at the table (I feel as if this is unhygienic as the next customer would not know that this salt had fallen out onto the dirty table.) not sure I would come back to this specific Bootleggers again.
+                 </div>
+                </div>
         </div>
     </div>
 </div>
@@ -146,7 +177,50 @@
         <div class="parallax-container par">
             <div class="centered text-center">
                 <!--Enter code in this div-->
-                <h1 class="text-center text-white">List of restaurants come here</h1>
+                <h1 class="text-center text-white">List of restaurants </h1>
+            {%for i in range (0,len)%}
+            
+              {%endfor%}
+                <ol>
+                {%for i in range (0,len)%}
+                    <li class = "boxed text-white"><p><img src = picts[i] style= "width:100px; height:100px"></p><p>{{res_names[i]}}</p><p>{{trading[i]}}</p>
+
+                    {% if stars[i] == 1 %}
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                {% elif stars[i] == 2 %}
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                {%elif stars[i] == 3 %}
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                {%elif stars[i] == 4 %}
+                <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star"></span>
+                 {%elif stars[i] == 5%}
+                 <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked "></span>
+
+                {% endif %}
+</li>
+                {%endfor%}
+                </ol>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
                 
             </div>
 
