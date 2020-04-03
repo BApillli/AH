@@ -1,7 +1,17 @@
+body {
+    background-color: black;
+}
+
 .img {
     display: block;
     width: 100%;
     height: 500px;
+}
+
+.section {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
 }
 
 .centered {
@@ -9,13 +19,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.divImg {
-    background-color: black;
-    width: 100%;
-    height: 100vh;
-    position: relative;
 }
 
 .heading {
@@ -41,5 +44,99 @@
 .par {
     width: 100%;
     height: 100vh;
-    min-height: 100vh;
+}
+
+#middle {
+    font-size: 30px;
+    color: whitesmoke;
+}
+
+option, select {
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: gray;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 18px;
+    padding: 10px;
+    width: 210px;
+}
+
+.form_component_holder {
+    width: 100%;
+}
+
+.button {
+    text-align: center;
+    width: 100%;
+    color: white;
+    border-radius: 2rem;
+    border-width: 2px;
+    border-color: white;
+    background-color: rgb(28, 24, 12);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.input {
+    width: 100%;
+    color: white;
+    background-color: rgba(28, 24, 12, 0.6);
+}
+
+.input:active {
+    background-color: rgb(28, 24, 12);
+}
+
+.label {
+    color: white;
+}
+
+.Form_load {
+    text-align: center;
+    width: 100%;
+    color: white;
+    border-radius: 2rem;
+    border-width: 2px;
+    border-color: white;
+    background-color: rgb(28, 24, 12);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bite {
+    letter-spacing: .1em;
+    text-shadow: 0px 22px 1px rgba(0, 0, 0, 0.91);
+}
+
+.allow {
+    letter-spacing: .1em;
+    text-shadow: 0px 10px 0px rgba(0, 0, 0, 0.91);
+    font-weight: bolder;
+}
+
+.container {
+    width: 100%;
+    padding: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+.row {
+    width: 100%;
+    padding: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.col {
+    padding: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
 }

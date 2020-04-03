@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="width: 100%;">
 
 <head>
     <meta charset="UTF-8">
@@ -25,7 +25,7 @@
     
 </head>
 
-<body>
+<body style="width: 100%;">
     <nav class="navbar navbar-expand-lg navbar-dark navigation">
         <a class="navbar-brand" href="#Top">FindMyTaste</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#Intro">Welcome</a>
+                <a class="nav-link" href="#Intro">Welcome</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#Input">Restaurant select</a>
@@ -68,6 +68,12 @@
         });
     </script>
 
+    <script type="text/javascript">
+        prevent = (e)  => {
+            e.targetElement.preventDefault();
+        }
+    </script>
+
     <script>
         $(document).ready(function(){
         // Add smooth scrolling to all links
@@ -90,7 +96,11 @@
                 // Add hash (#) to URL when done scrolling (default click behavior)
                 window.location.hash = hash;
             });
+
+            // Prevent default anchor click behavior
+            event.preventDefault();
             } // End if
+
         });
         });
     </script>
