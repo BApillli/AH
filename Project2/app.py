@@ -1,7 +1,6 @@
 from flask import Flask, render_template, flash, redirect, url_for
-#from app import app
 from forms import LoginForm
-from flask import Flask, make_response, request
+from flask import make_response, request
 from config import Config
 
 import csv
@@ -17,11 +16,11 @@ picts = ["../static/images/IMG-4316.JPG","../static/images/IMG-4317.JPG","../sta
 trading = ["24hrs","16:30 - 22:00","17:00 - 02:00"]
 
 @app.route('/')
-@app.route('/index')
+@app.route('/index', methods=['GET', 'POST'])
 def index():
     form = LoginForm()
     if form.validate_on_submit():
-        flash('Form to be filled requested for user {},'.format(
+        flash('User wants the city {},'.format(
             form.city.data))
         return redirect(url_for('index'))
     return render_template('index.html', form=form,len = len(res_names),res_names = res_names,stars = stars,picts = picts,trading = trading)

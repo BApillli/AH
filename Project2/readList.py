@@ -2,38 +2,44 @@ import csv
 import re
 
 class ReadList():
+    """
+        This class is used to read in lists of the cities and 
+        cuisines from their respective csv files.
+    """
 
     @staticmethod
     def get_city():
-        li = []
-        with open('./data/cities.csv') as csvin:
-            read = [tuple(line) for line in csv.reader(csvin)]
-        line = 0
-        for row in read:
-            if (line != 0):
-                for orr in row:
-                    li.append(orr)
-            line = line + 1
-        x = ["city"] * len(li)
-        c = list(zip(x,li))
 
-        return c
+        city_list = []
+        with open('./data/cities.csv') as city_csv:
+            read_city = [tuple(line) for line in csv.reader(city_csv)]
+        line = 0
+        for row in read_city:
+            if (line != 0):
+                for city_name in row:
+                    city_list.append(city_name)
+            line = line + 1
+        x = ["city"] * len(city_list)
+        cit = list(zip(x,city_list))
+
+        return cit
 
     @staticmethod
     def get_cus():
-        with open('./data/cuisines.csv') as csvine:
-            rd = list(csv.reader(csvine))
-        y = []
-        line = 0
-        for rw in rd:
-            if (line != 0):
-                for kk in rw:
-                    ok = re.split("[\{ |\: |\}]",kk)
-                    k = list(filter(None, ok))
-                    s = ' '.join(k[1:])
-                    y.append(s)
-            line = line + 1
-        xo = ["cuisine"] * len(y)
-        cuu = list(zip(xo, y))
 
-        return cuu
+        with open('./data/cuisines.csv') as cus_csv:
+            read_cus = list(csv.reader(cus_csv))
+        cus_list = []
+        line = 0
+        for row in read_cus:
+            if (line != 0):
+                for rw in row:
+                    cus_name = re.split("[\{ |\: |\}]",rw)
+                    k = list(filter(None, cus_name))
+                    s = ' '.join(k[1:])
+                    cus_list.append(s)
+            line = line + 1
+        x = ["cuisine"] * len(cus_list)
+        cus = list(zip(x, cus_list))
+
+        return cus
