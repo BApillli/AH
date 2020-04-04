@@ -38,7 +38,10 @@
             <div class="col-1 col-sm-1 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'></div>
             <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
                 <div style="text-align: center; width: 100%;">
-                    <button class='button' style='font-family: Quicksand;'>Find My Taste!</button>
+                    <!--Made the Find my taste button a link to the input-form -->     
+                    <a href = "#input-form">
+                        <button class='button' style='font-family: Quicksand;'>Find My Taste!</button>
+                    </a>
                 </div>
             </div>
             <div class="col-1 col-sm-1 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'></div>
@@ -46,7 +49,7 @@
     </div>
 </div>
 
-<div class='container-fluid section'>
+<div class='container-fluid section' id="input-form">
     <!-- part for the input form -->
     <div class="row">
         <div class="parallax-container par">
@@ -56,7 +59,8 @@
                 </div>
                 <br/>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
-                    <form action="" method="post" novalidate>
+                    <!-- action takes the input data and goes to the id=Output part of the html file-->
+                    <form action="/index#Output" method='POST'>
                         {{ form.hidden_tag() }}
                         <div class="row">
                             <!-- City field -->
@@ -91,13 +95,7 @@
                             <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
                                 <p class='form_component_holder'>
                                     {{ form.day.label(class='label') }}<br>
-                                    <select name="DAY" class='input'>
-                                        {% for choice, human in form.day.choices %}
-                                        <option value="{{ choice }}">
-                                        {{human}}
-                                        </option>
-                                        {% endfor %}
-                                    </select><br>
+                                    {{ form.day(class='input') }}<br>
                                     {% for error in form.day.errors %}
                                     <span style="color: red;">[{{ error }}]</span>
                                     {% endfor %}
@@ -171,7 +169,21 @@
                   <div class="boxed text-white" >
                     Coffee is really good. The staff are quite friendly. However, I had an incident where the salt shakers lid was loose and I ended up with salt all over my food and the table. It was quite disappointing that I had to ask for a replacement meal (no one offered or tried to compensate for the mishap. Instead I was made to feel as if it was my own fault.) I also asked someone to clean up the salt that fell on table, the person, wiped the salt up, put it back into the salt shaker and left the same shaker at the table (I feel as if this is unhygienic as the next customer would not know that this salt had fallen out onto the dirty table.) not sure I would come back to this specific Bootleggers again.
                  </div>
+            </div>
+            <!-- This shows what is input from the input-form -->
+            <p>
+                <div class="boxed text-white">
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                        <ul>
+                            {% for message in messages %}
+                            <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% endwith %}
                 </div>
+            </p>
         </div>
     </div>
 </div>
