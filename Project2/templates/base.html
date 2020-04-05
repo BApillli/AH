@@ -27,17 +27,17 @@
 
 <body style="width: 100%;">
     <nav class="navbar navbar-expand-lg navbar-dark navigation">
-        <a class="navbar-brand" href="#Top">FindMyTaste</a>
+        <a class="navbar-brand" href="#Top" style="font-family: Fredericka the Great; font-size: 30px;">FindMyTaste</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse text-center" id="navbarNavDropdown" style='margin:auto;'>
             <ul class="navbar-nav" style='margin:auto;'>
                 <li class="nav-item text-center" style='margin:auto;'>
-                    <a class="nav-link link text-white" href="#Intro">Welcome</a>
+                    <a class="nav-link link text-white" href="#Welcome">Welcome</a>
                 </li>
                 <li class="nav-item text-center" style='margin:auto;'>
-                    <a class="nav-link link text-white" href="#Input">Restaurant select</a>
+                    <a class="nav-link link text-white" href="#Select">Restaurant select</a>
                 </li>
                 <li class="nav-item text-center" style='margin:auto;'>
                     <a class="nav-link link text-white" href="#Output">Restaurant recommendations</a>
@@ -65,43 +65,6 @@
     <script>
         $(document).ready(function(){
             $('.parallax').parallax();
-        });
-    </script>
-
-    <script type="text/javascript">
-        prevent = (e)  => {
-            e.targetElement.preventDefault();
-        }
-    </script>
-
-    <script>
-        $(document).ready(function(){
-        // Add smooth scrolling to all links
-        $("a").on('click', function(event) {
-
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
-            // Prevent default anchor click behavior
-            event.preventDefault();
-
-            // Store hash
-            var hash = this.hash;
-
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top - 100
-            }, 800, function(){
-        
-                // Add hash (#) to URL when done scrolling (default click behavior)
-                window.location.hash = hash;
-            });
-
-            // Prevent default anchor click behavior
-            event.preventDefault();
-            } // End if
-
-        });
         });
     </script>
     

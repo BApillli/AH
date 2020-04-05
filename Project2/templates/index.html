@@ -1,6 +1,6 @@
 {% include 'base.html' %} 
 
-<div class='container-fliud section' id='Top'>
+<div class='container-fluid section' id='Top'>
     <div class="row">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
             <div class="parallax-container par">
@@ -18,18 +18,19 @@
     </div>
 </div>
 
-<div class='container-fluid section'>
+<div class='container-fluid section' id='Welcome'>
     <div class='divImg'>
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
                 <div class='text-center'>
-                    <img src="../static/images/welcome_1.png" style='margin: auto; margin-top: 50px; width: 200px; height: 230px;'>
+                    <img src="../static/images/welcome_1.png" style='margin: auto; width: 200px; height: 230px;'>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
                 <h2 class="text-center text-white heading" style='font-family: Quicksand;'>Welcome to <p class='Name' style='font-family: Fredericka the Great; font-size: 50px;'>FindMyTaste!</p></h2>
+                <br/>
                 <h3 class="text-center text-white" style='font-family: Quicksand;'>Input the details so we can find you what to eat :P</h3>
             </div>  
         </div>
@@ -38,7 +39,7 @@
             <div class="col-1 col-sm-1 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'></div>
             <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
                 <div style="text-align: center; width: 100%;">
-                    <button class='button' style='font-family: Quicksand;'>Find My Taste!</button>
+                    <button class='button'>Find My Taste!</button>
                 </div>
             </div>
             <div class="col-1 col-sm-1 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'></div>
@@ -46,83 +47,85 @@
     </div>
 </div>
 
-<div class='container-fluid section'>
+<div class='container-fluid section' id='Select'>
     <div class="row">
         <div class="parallax-container par">
-            <div class="row form">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
-                    <h1 class="text-white text-center" style='width: 100%;'>Input form</h1>
-                </div>
-                <br/>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
-                    <form action="" method="post" novalidate>
-                        {{ form.hidden_tag() }}
-                        <div class="row">
-                            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
-                            <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
-                                <p class='form_component_holder'>
-                                    {{ form.city.label(class='label') }}<br>
-                                    {{form.city(class='input')}}
-                                    {% for error in form.city.errors %}
-                                    <span style="color: red;">[{{ error }}]</span>
-                                    {% endfor %}
-                                </p>
-                            </div>
-                            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
-
-                            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
-                            <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
-                                <p class='form_component_holder'>
-                                    {{ form.cuisine.label(class='label') }}<br>
-                                    {{ form.cuisine(class='input') }}<br>
-                                    {% for error in form.cuisine.errors %}
-                                    <span style="color: red;">[{{ error }}]</span>
-                                    {% endfor %}
-                                </p>
-                            </div>
-                            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
-                            <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
-                                <p class='form_component_holder'>
-                                    {{ form.day.label(class='label') }}<br>
-                                    <select name="DAY" class='input'>
-                                        {% for choice, human in form.day.choices %}
-                                        <option value="{{ choice }}">
-                                        {{human}}
-                                        </option>
+            <div class='divImg'>
+                <div class="row form">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
+                        <h1 class="text-white text-center" style='width: 100%; font-family: Permanent Marker;'>Input form</h1>
+                    </div>
+                    <br/>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
+                        <form action="" method="post" novalidate>
+                            {{ form.hidden_tag() }}
+                            <div class="row">
+                                <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
+                                <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
+                                    <p class='form_component_holder'>
+                                        {{ form.city.label(class='label') }}<br>
+                                        {{form.city(class='input')}}
+                                        {% for error in form.city.errors %}
+                                        <span style="color: red;">[{{ error }}]</span>
                                         {% endfor %}
-                                    </select><br>
-                                    {% for error in form.day.errors %}
-                                    <span style="color: red;">[{{ error }}]</span>
-                                    {% endfor %}
-                                </p>
-                            </div>
-                            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
+                                    </p>
+                                </div>
+                                <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
 
-                            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
-                            <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
-                                <p class='form_component_holder'>
-                                    {{ form.time.label(class='label') }}<br>
-                                    {{ form.time(class='input') }}<br>
-                                    {% for error in form.time.errors %}
-                                    <span style="color: red;">[{{ error }}]</span>
-                                    {% endfor %}
-                                </p>
+                                <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
+                                <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
+                                    <p class='form_component_holder'>
+                                        {{ form.cuisine.label(class='label') }}<br>
+                                        {{ form.cuisine(class='input') }}<br>
+                                        {% for error in form.cuisine.errors %}
+                                        <span style="color: red;">[{{ error }}]</span>
+                                        {% endfor %}
+                                    </p>
+                                </div>
+                                <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
                             </div>
-                            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
-                        </div>
-                        <br/>
-                        <div class="row">
-                            <div class="col-1 col-sm-1 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'></div>
-                            <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
-                                <p class='form_component_holder'>{{ form.submit(class_="text-center text-black text; button") }}</p>
+
+                            <div class="row">
+                                <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
+                                <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
+                                    <p class='form_component_holder'>
+                                        {{ form.day.label(class='label') }}<br>
+                                        <select name="DAY" class='input'>
+                                            {% for choice, human in form.day.choices %}
+                                            <option value="{{ choice }}">
+                                            {{human}}
+                                            </option>
+                                            {% endfor %}
+                                        </select><br>
+                                        {% for error in form.day.errors %}
+                                        <span style="color: red;">[{{ error }}]</span>
+                                        {% endfor %}
+                                    </p>
+                                </div>
+                                <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
+
+                                <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
+                                <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
+                                    <p class='form_component_holder'>
+                                        {{ form.time.label(class='label') }}<br>
+                                        {{ form.time(class='input') }}<br>
+                                        {% for error in form.time.errors %}
+                                        <span style="color: red;">[{{ error }}]</span>
+                                        {% endfor %}
+                                    </p>
+                                </div>
+                                <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
                             </div>
-                            <div class="col-1 col-sm-1 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'></div>
-                        </div>
-                    </form>
+                            <br/>
+                            <div class="row">
+                                <div class="col-1 col-sm-1 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'></div>
+                                <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
+                                    <p class='form_component_holder'>{{ form.submit(class_="text-center text-black text; button") }}</p>
+                                </div>
+                                <div class="col-1 col-sm-1 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'></div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
 
@@ -134,94 +137,116 @@
 </div>
 
 <div class='container-fluid section' id='Output'>
-    <div class="row">
-        <div class='divImg'>
-            <div>
-                <h1 class="text-center text-white heading">This must be the place!</h1>
-            </div>
-        
-            <div>
-                <h2 class= text-white>Bootleggers</h2>
-            </div>
-            
-            <address class = "text-center text-white font-size : 10">
-                13 Ryneveld St,<br>
-                Stellenbosch,<br>
-                Cape Town<br>
-                7600
-             </address>
-            <div>
+    <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
+    <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10" style='padding: 0; margin: 0;'></div>
+        <div class='divImg text-center'>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
                     <div>
-                 <h4 class ="text-white">Star Rating:</h4>
-                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                 <span class="fa fa-star checked"></span>
-                 <span class="fa fa-star checked"></span>
-                 <span class="fa fa-star checked"></span>
-                 <span class="fa fa-star"></span>
-                 <span class="fa fa-star"></span>
-                 </div>
-                <h4 class = "text-white" >Review:</h4>
-                <div class="chip">
-                    <img src="avatar.png" alt="Person" class="avatar">             
-                  </div> 
-                  <div class="boxed text-white" >
-                    Coffee is really good. The staff are quite friendly. However, I had an incident where the salt shakers lid was loose and I ended up with salt all over my food and the table. It was quite disappointing that I had to ask for a replacement meal (no one offered or tried to compensate for the mishap. Instead I was made to feel as if it was my own fault.) I also asked someone to clean up the salt that fell on table, the person, wiped the salt up, put it back into the salt shaker and left the same shaker at the table (I feel as if this is unhygienic as the next customer would not know that this salt had fallen out onto the dirty table.) not sure I would come back to this specific Bootleggers again.
-                 </div>
+                        <h1 class="text-center text-white heading" style="margin-bottom: 25px; font-family: Permanent Marker;">This must be the place!</h1>
+                    </div>
                 </div>
+                
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style='padding: 0; margin: 0;'>
+                    <div>
+                        <h2 class='text-white'>Bootleggers</h2>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style='padding: 0; margin: 0;'>
+                    <p style='width: 100%; justify-content: right;'>
+                        <address class="text-white font-size : 10">
+                            13 Ryneveld St,<br>
+                            Stellenbosch,<br>
+                            Cape Town<br>
+                            7600
+                        </address>
+                    </p>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
+                    <div style="margin-bottom: 20px; margin-top: 20px;">
+                        <h4 class ="text-white">Star Rating:</h4>
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div> 
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
+                    <h4 class = "text-white" style="margin-bottom: 20px;">Review:</h4>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
+                    <div class="chip" style="margin-bottom: 20px;">
+                        <img src="avatar.png" alt="Person" class="avatar">             
+                    </div> 
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
+                    <div class="text-white" style='font-size: 15px'>
+                        Coffee is really good. The staff are quite friendly. However, I had an incident where the salt shakers lid was loose and I ended up with salt all over my food and the table. It was quite disappointing that I had to ask for a replacement meal (no one offered or tried to compensate for the mishap. Instead I was made to feel as if it was my own fault.) I also asked someone to clean up the salt that fell on table, the person, wiped the salt up, put it back into the salt shaker and left the same shaker at the table (I feel as if this is unhygienic as the next customer would not know that this salt had fallen out onto the dirty table.) not sure I would come back to this specific Bootleggers again.
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
+    <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
 </div>
 
 <div class='container-fluid section' id='ExtraOutput'>
     <div class="row">
         <div class="parallax-container par">
-            <div class="centered text-center">
-                <!--Enter code in this div-->
-                <h1 class="text-center text-white">List of restaurants </h1>
-            {%for i in range (0,len)%}
-            
-              {%endfor%}
-                <ol>
+            <div class='divImg'>
+                <div class="centered text-center">
+                    <!--Enter code in this div-->
+                    <h1 class="text-center text-white">List of restaurants </h1>
                 {%for i in range (0,len)%}
-                    <li class = "boxed text-white"><p><img src = picts[i] style= "width:100px; height:100px" align = "left"></p><p>{{res_names[i]}}</p><p>{{trading[i]}}</p>
+                
+                {%endfor%}
+                    <ol>
+                    {%for i in range (0,len)%}
+                        <li class = "boxed text-white"><p><img src = picts[i] style= "width:100px; height:100px" align = "left"></p><p>{{res_names[i]}}</p><p>{{trading[i]}}</p>
 
-                    {% if stars[i] == 1 %}
+                        {% if stars[i] == 1 %}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    {% elif stars[i] == 2 %}
+                    <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
+                    {%elif stars[i] == 3 %}
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
                     <span class="fa fa-star"></span>
-                {% elif stars[i] == 2 %}
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                {%elif stars[i] == 3 %}
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                {%elif stars[i] == 4 %}
-                <span class="fa fa-star checked"></span>
-                 <span class="fa fa-star checked"></span>
-                 <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                 <span class="fa fa-star"></span>
-                 {%elif stars[i] == 5%}
-                 <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked "></span>
+                    <span class="fa fa-star"></span>
+                    {%elif stars[i] == 4 %}
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    {%elif stars[i] == 5%}
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked "></span>
 
-                {% endif %}
-</li>
-                {%endfor%}
-                </ol>
-
-                
+                    {% endif %}
+                        </li>
+                    {%endfor%}
+                    </ol>
+                </div>
             </div>
 
             <div class="parallax">
