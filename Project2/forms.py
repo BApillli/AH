@@ -1,14 +1,14 @@
 from flask_wtf import FlaskForm
-from wtforms import (StringField, SubmitField, TextField, SelectField, DateTimeField)
-from wtforms.validators import DataRequired, EqualTo
+from wtforms import SubmitField, SelectField
+from wtforms.validators import DataRequired
 from wtforms_components import TimeField
 from readList import ReadList
 
 class LoginForm(FlaskForm):
-    city = SelectField(u'City', choices=ReadList.get_city(), validators=[DataRequired()])
-    cuisine = SelectField('Cuisine', choices=ReadList.get_cus(), validators=[DataRequired()])
-    day = SelectField('Day', choices=[('Mon', 'Monday'), ('Tue', 'Tuesday'), ('Wed', 'Wednesday'),
-            ('Thur', 'Thursday'), ('Fri', 'Friday'), ('Sat', 'Saturday'), ('Sun', 'Sunday')], validators=[DataRequired()])
-    time = TimeField('Time')
-    submit = SubmitField('Submit')
-
+        """ A class to create the input form """
+        city = SelectField('City', default = '', choices=[('', 'City'),] + ReadList.get_city(), validators=[DataRequired()])
+        cuisine = SelectField('Cuisine', default = '', choices=[('', 'Cuisine'),] + ReadList.get_cus(), validators=[DataRequired()])
+        day = SelectField('Day', default = '', choices=[('', 'Day'), ('Monday', 'Monday'), ('Tuesday', 'Tuesday'), ('Wednesday', 'Wednesday'),
+                ('Thursday', 'Thursday'), ('Friday', 'Friday'), ('Saturday', 'Saturday'), ('Sunday', 'Sunday')], validators=[DataRequired()])
+        time = TimeField('Time',validators=[DataRequired()])
+        submit = SubmitField('Submit')

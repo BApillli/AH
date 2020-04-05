@@ -39,7 +39,10 @@
             <div class="col-1 col-sm-1 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'></div>
             <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
                 <div style="text-align: center; width: 100%;">
-                    <button class='button'>Find My Taste!</button>
+                    <!--Made the Find my taste button a link to the input-form -->     
+                    <a href = "#input-form">
+                        <button class='button'>Find My Taste!</button>
+                    </a>
                 </div>
             </div>
             <div class="col-1 col-sm-1 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'></div>
@@ -47,7 +50,8 @@
     </div>
 </div>
 
-<div class='container-fluid section' id='Select'>
+<div class='container-fluid section' id='input-form'>
+    <!-- part for the input form -->
     <div class="row">
         <div class="parallax-container par">
             <div class='divImg'>
@@ -57,9 +61,11 @@
                     </div>
                     <br/>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
-                        <form action="" method="post" novalidate>
+                        <!-- action takes the input data and goes to the id=Output part of the html file-->
+                        <form action="/index#Output" method="post" novalidate>
                             {{ form.hidden_tag() }}
                             <div class="row">
+                                <!-- City field -->
                                 <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
                                 <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
                                     <p class='form_component_holder'>
@@ -72,6 +78,7 @@
                                 </div>
                                 <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
 
+                                <!-- Cuisine field -->
                                 <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
                                 <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
                                     <p class='form_component_holder'>
@@ -86,17 +93,12 @@
                             </div>
 
                             <div class="row">
+                                <!-- Day field-->
                                 <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div>
                                 <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
                                     <p class='form_component_holder'>
                                         {{ form.day.label(class='label') }}<br>
-                                        <select name="DAY" class='input'>
-                                            {% for choice, human in form.day.choices %}
-                                            <option value="{{ choice }}">
-                                            {{human}}
-                                            </option>
-                                            {% endfor %}
-                                        </select><br>
+                                        {{ form.day(class='input') }}<br>
                                         {% for error in form.day.errors %}
                                         <span style="color: red;">[{{ error }}]</span>
                                         {% endfor %}
@@ -118,6 +120,7 @@
                             </div>
                             <br/>
                             <div class="row">
+                                <!--Submit field-->
                                 <div class="col-1 col-sm-1 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'></div>
                                 <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
                                     <p class='form_component_holder'>{{ form.submit(class_="text-center text-black text; button") }}</p>
@@ -191,6 +194,20 @@
                     </div>
                 </div>
 
+                <!-- This shows what is input from the input-form -->
+                <p>
+                    <div class="boxed text-white">
+                            {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                            <ul>
+                                {% for message in messages %}
+                                <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            {% endwith %}
+                    </div>
+                </p>
             </div>
         </div>
     </div>
