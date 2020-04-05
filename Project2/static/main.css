@@ -204,3 +204,6 @@ option, select {
     transform: translateY(-50%);
   }
   
+  #input-form {
+      min-height: 550px;
+  }
