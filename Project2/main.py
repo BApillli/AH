@@ -19,6 +19,17 @@ def main():
     #print(most_useful("McDonald's"))
     # you can get stars, location, etc like this:
     # star = cat_buss(store, 2)
+    
+def best_business(city, day, time, cuisine):
+    store = get_buss(city, cuisine)
+    business = []
+    for i in range(0, len(store)):
+        if is_open(day, time, store[i]['m']['id']):
+            # stores top business id and name
+            business.append(store[i]['m']['id'])
+            business.append(store[i]['m']['name'])
+            break
+    return business
 
 # for debug purposes    
 def all_info(city, day, time, cuisine):
