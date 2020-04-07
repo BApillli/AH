@@ -20,6 +20,27 @@ def main():
     # you can get stars, location, etc like this:
     # star = cat_buss(store, 2)
 
+# for debug purposes    
+def all_info(city, day, time, cuisine):
+    store = get_buss(city, cuisine)
+    business = []
+    for i in range(0, len(store)):
+        if is_open(day, time, store[i]['m']['id']):
+            # stores top business id and name
+            business.append(store[i]['m']['id'])
+            business.append(store[i]['m']['name'])
+            break
+    print(" ----- business id -----")    
+    print(business[0]) 
+    print(" ----- business name -----")
+    print(business[1])  
+    print(" ----- review -------------")
+    review = most_useful(str(business[1]))
+    print(review)
+    print(" ----- photo ids ----------")
+    photos = get_photos(str(business[0]))
+    print(photos)
+    
 def cat_buss(buss, index):
     entry = buss[index]["n"]
     return entry
