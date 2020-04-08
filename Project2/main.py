@@ -133,7 +133,7 @@ def most_useful(buss_name):
 
 def get_photos(business_id):
     # still need to do condition where there are no photos
-    store = graph.run("MATCH (b:Business {id: \"" + business_id + "\"}) - [:PHOTO] -> (p:Photo) return p").data()
+    store = graph.run("MATCH (b:Business {id: \"" + business_id + "\"}) - [:PHOTO] -> (p:Photo) return p.id, p.caption").data()
     return store
 
 # i made changes to this
