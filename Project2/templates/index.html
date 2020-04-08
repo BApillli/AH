@@ -152,16 +152,17 @@
                 
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style='padding: 0; margin: 0;'>
                     <div>
-                        <h2 class='text-white'>Bootleggers</h2>
+                        <h2 class='text-white'>{{best_res}}</h2>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style='padding: 0; margin: 0;'>
                     <p style='width: 100%; justify-content: right;'>
                         <address class="text-white font-size : 10">
-                            13 Ryneveld St,<br>
+                            {{address}}
+                           <!-- 13 Ryneveld St,<br>
                             Stellenbosch,<br>
                             Cape Town<br>
-                            7600
+                            7600 --->
                         </address>
                     </p>
                 </div>
@@ -190,7 +191,7 @@
 
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
                     <div class="text-white" style='font-size: 15px'>
-                        Coffee is really good. The staff are quite friendly. However, I had an incident where the salt shakers lid was loose and I ended up with salt all over my food and the table. It was quite disappointing that I had to ask for a replacement meal (no one offered or tried to compensate for the mishap. Instead I was made to feel as if it was my own fault.) I also asked someone to clean up the salt that fell on table, the person, wiped the salt up, put it back into the salt shaker and left the same shaker at the table (I feel as if this is unhygienic as the next customer would not know that this salt had fallen out onto the dirty table.) not sure I would come back to this specific Bootleggers again.
+                        {{review}}
                     </div>
                 </div>
 
@@ -226,8 +227,7 @@
                 {%endfor%}
                     <ol>
                     {%for i in range (0,len)%}
-                        <li class = "boxed text-white"><p><img src = picts[i] style= "width:100px; height:100px" align = "left"></p><p>{{res_names[i]}}</p><p>{{trading[i]}}</p>
-
+                        <li class = "boxed text-white"><p><img src = picts[i] style= "width:100px; height:100px" align = "left"></p><p>{{res_names[i]['name']}}</p><p>{{trading[i]}}</p>
                         {% if stars[i] == 1 %}
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star"></span>

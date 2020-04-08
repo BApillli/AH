@@ -28,6 +28,7 @@ def best_business(city, day, time, cuisine):
             # stores top business id and name
             business.append(store[i]['m']['id'])
             business.append(store[i]['m']['name'])
+            business.append(store[i]['m']['address'])
             break
     return business
 
@@ -48,6 +49,12 @@ def all_info(city, day, time, cuisine):
     print(" ----- review -------------")
     review = most_useful(str(business[1]))
     print(review)
+    user = review['m.id']
+    print("--------- user ---------")
+    print(user)
+    restaurants = get_top_five(user, city, cuisine, day, time)
+    print("--------- restaurants ---------")
+    print(restaurants)
     print(" ----- photo ids ----------")
     photos = get_photos(str(business[0]))
     print(photos)
@@ -89,7 +96,7 @@ def get_buss(city, cruisine):
     store = graph.run("MATCH (m:Business)-[:IN_CATEGORY]->(n:Category) WHERE m.city=\""+city+"\" AND n.id=\""+cruisine+"\" RETURN m,n ORDER BY m.stars DESC, m.review_count DESC").data()
     return store
 
-#returns the user and their review
+#returns the user and their review -- I MADE CHANGES HERE AS WELL
 def most_useful(buss_name):
     #is there a dynamic way to check the last two years.. stay tuned
     store = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE r.date>'2017-12-31' AND n.name=\""+buss_name+"\" RETURN r.useful ORDER BY r.useful DESC, r.date DESC").data()
@@ -118,9 +125,9 @@ def most_useful(buss_name):
     #it is sorted by date so the more recent one is first anyway.. resolving duplicates. need to test extensively
 
     if two_years == 0:
-        r_review = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE r.date>'2017-12-31' AND n.name=\""+buss_name+"\" RETURN m.name, r.text ORDER BY r.useful DESC, r.date DESC").data()
+        r_review = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE r.date>'2017-12-31' AND n.name=\""+buss_name+"\" RETURN m.name, r.text, r.stars, m.id ORDER BY r.useful DESC, r.date DESC").data()
     else:
-        r_review = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE n.name=\""+buss_name+"\" RETURN m.name, r.text ORDER BY r.useful DESC, r.date DESC").data()  
+        r_review = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE n.name=\""+buss_name+"\" RETURN m.name, r.text, m.id ORDER BY r.useful DESC, r.date DESC").data()  
     
     return r_review[i]
 
@@ -128,16 +135,25 @@ def get_photos(business_id):
     # still need to do condition where there are no photos
     store = graph.run("MATCH (b:Business {id: \"" + business_id + "\"}) - [:PHOTO] -> (p:Photo) return p").data()
     return store
-    
-def get_top_five(user_id, city, cuisine):
+
+# i made changes to this
+def get_top_five(user_id, city, cuisine, day, time):
     query = "MATCH (a:User{id: \"" + user_id + "\"}) - [:FRIEND] -> (:User) - [:FRIEND] -> (c:User), (a) - [:FRIEND] -> (b:User) \
             OPTIONAL MATCH (b) - [:REVIEWS] -> (d:Business {city: \"" + city + "\"})-[:IN_CATEGORY]->(:Category {id: \"" + cuisine + "\"}) \
             OPTIONAL MATCH (c) -[:REVIEWS] -> (e:Business {city: \"" + city + "\"})-[:IN_CATEGORY]->(:Category {id: \"" + cuisine + "\"}) \
             WITH collect(d)+collect(e) AS nodez UNWIND nodez as f RETURN DISTINCT f \
-            ORDER by f.stars DESC, f.review_count DESC"
+            ORDER by f.stars DESC, f.review_count DESC LIMIT 50"
     store = graph.run(query).data()
-
-    return store
+    
+    j = 0
+    restaurants = []
+    for i in range (0, len(store)):
+        if is_open(day, time, store[i]['f']['id']):
+            j+=1
+            restaurants.append(store[i]['f'])
+        if j == 5:
+            break    
+    return restaurants
 
 if __name__ == "__main__":
     main()

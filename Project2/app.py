@@ -1,8 +1,9 @@
 from flask import Flask, render_template, flash, redirect, url_for
 from forms import LoginForm
+import main
 from flask import make_response, request
 from config import Config
-
+from datetime import datetime
 import csv
 
 app = Flask(__name__)
@@ -14,7 +15,8 @@ res_names = ["WhatABurger","Girl & The Goat","Vernick Food & Drink"]
 stars = [5,4,3,3,1]
 picts = ["../static/images/IMG-4316.JPG","../static/images/IMG-4317.JPG","../static/images/IMG-4318.JPG"]
 trading = ["24hrs","16:30 - 22:00","17:00 - 02:00"]
-
+review = "blah blah blah"
+name = []
 
 @app.route('/')
 @app.route('/index', methods = ['GET', 'POST'])
@@ -23,8 +25,49 @@ def index():
     if form.validate_on_submit():
         flash('User wants a restuarant in the city {}, with the cuisine {}, from the time {}, on the day {}'.format(
             form.city.data, form.cuisine.data, form.time.data, form.day.data))
-        return redirect(url_for('index'))
-    return render_template('index.html', form=form,len = len(res_names),res_names = res_names,stars = stars,picts = picts,trading = trading)
+        name = main.best_business(form.city.data, form.day.data, form.time.data.strftime("%H:%M"), form.cuisine.data)
+        # gets the review
+        review = main.most_useful(str(name[1]))
+        # gets the user of the review
+        user = review['m.id'] #make sure this actually works
+        # gets the list of restaurants
+        restaurants = main.get_top_five(user, form.city.data, form.cuisine.data, form.day.data, form.time.data.strftime("%H:%M"))
+        trade = trading_hours(restaurants, form.day.data)
+        rating = stars(restaurants)
+        review = review['r.text']
+        address = name[2]
+        #print(rating)
+        # need to return top restaurant with information followed by list of extra restaurants
+        return render_template('index.html', form=form,len = len(restaurants),res_names=restaurants,stars = rating,picts = picts,trading = trade, review=review, best_res=name[1], address=address)   
+    else:
+        #just returns hard coded stuff
+        return render_template('index.html', form=form,len = len(res_names),res_names=res_names,stars = stars,picts = picts,trading = trading)
+
+''' for later '''
+@app.route('/results', methods = ['GET', 'POST'])
+def results(data):
+    if form.validate_on_submit():
+        flash('User wants a restuarant in the city {}, with the cuisine {}, from the time {}, on the day {}'.format(
+            form.city.data, form.cuisine.data, form.time.data, form.day.data))
+        name = main.all_info(form.city.data, form.day.data, form.time.data.strftime("%H:%M"), form.cuisine.data)
+        return render_template('index.html', form=form,len = len(name),res_names=name,stars = stars,picts = picts,trading = trading)   
+    else:
+        #just returns hard coded stuff
+        return render_template('index.html', form=form,len = len(res_names),res_names=res_names,stars = stars,picts = picts,trading = trading, review=review)
+
+''' Returns the trading hours for the list of restaurants '''
+def trading_hours(buss,day):
+    hours = []
+    for i in range (0, len(buss)):
+        hours.append(buss[i][day])
+    return hours    
+
+''' Returns the star rating for the list of restaurants '''
+def stars(buss):
+    stars = []
+    for i in range(0, len(buss)):
+        stars.append(buss[i]['stars'])
+    return stars
 
 
 if __name__ == '__main__':
