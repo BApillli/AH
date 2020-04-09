@@ -11,7 +11,7 @@ def main():
 
     #temp = is_open("Sunday", "16:30" , "LbM7p-cI0dUCkaUzOyFMTw")
     #print(temp)
-    print(get_top_five("AY_cjY1bRAD-I_K11dYvOA", "Scottsdale", "Fast Food"))
+    print(get_top_five("AY_cjY1bRAD-I_K11dYvOA", "Scottsdale", "Fast Food", "Monday", "14:00"))
     #businesses = get_buss("Champlain", "Burgers")
     
     #get_hours("Sunday", "McDonald's")
