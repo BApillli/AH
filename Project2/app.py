@@ -26,22 +26,42 @@ def index():
         flash('User wants a restuarant in the city {}, with the cuisine {}, from the time {}, on the day {}'.format(
             form.city.data, form.cuisine.data, form.time.data, form.day.data))
         name = main.best_business(form.city.data, form.day.data, form.time.data.strftime("%H:%M"), form.cuisine.data)
-        # gets the review
-        review = main.most_useful(str(name[1]))
-        # gets the user of the review
-        user = review['m.id'] #make sure this actually works
-        # gets the list of restaurants
-        restaurants = main.get_top_five(user, form.city.data, form.cuisine.data, form.day.data, form.time.data.strftime("%H:%M"))
-        trade = trading_hours(restaurants, form.day.data)
-        rating = stars(restaurants)
-        review = review['r.text']
-        address = name[2]
-        #print(rating)
-        # need to return top restaurant with information followed by list of extra restaurants
-        return render_template('index.html', form=form,len = len(restaurants),res_names=restaurants,stars = rating,picts = picts,trading = trade, review=review, best_res=name[1], address=address)   
+
+        if len(name) != 0:    
+            # gets the review
+            review = main.most_useful(str(name[1]))
+            if review != '':
+
+                # gets the user of the review
+                user = review['m.id'] #make sure this actually works
+                # gets the list of restaurants
+                restaurants = main.get_top_five(user, form.city.data, form.cuisine.data, form.day.data, form.time.data.strftime("%H:%M"))
+                trade = trading_hours(restaurants, form.day.data)
+                rating = stars(restaurants)
+                review = review['r.text']
+                address = name[2]
+
+                #print(rating)
+                # returns top restaurant with information followed by list of extra restaurants
+                # goes to top restaurant with information followed by list of extra restaurants
+                print('SECOND PAGE')
+                return render_template('secondpage.html', form=form,len = len(restaurants),res_names=restaurants,stars = rating,picts = picts,trading = trade, review=review, best_res=name[1], address=address) 
+
+            else :
+                print('THERE IS NO REVIEW')
+                # goes to the noresult when there is no review
+                address = name[2]
+                print('NO REVIEWW')
+                return render_template('noresult.html', form=form, title='No Review, thus no extra recommendations :/', best_res=name[1], address=address)
+  
+
+        # goes to the noresult page that will cater for the no result
+        print('NO RESULTSS')
+        return render_template('noresult.html', form=form, title='No Result was found for this, want to try again?', address='', best_res='')
+
     else:
-        #just returns hard coded stuff
-        return render_template('index.html', form=form,len = len(res_names),res_names=res_names,stars = stars,picts = picts,trading = trading)
+        #goes to the welcome page
+        return render_template('firstpage.html', form=form)
 
 ''' for later '''
 @app.route('/results', methods = ['GET', 'POST'])
