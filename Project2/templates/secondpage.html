@@ -32,11 +32,67 @@
                     <div style="margin-bottom: 20px; margin-top: 20px;">
                         <h4 class ="text-white">Star Rating:</h4>
                         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
+                        {% if rating == 1  %}
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        {% elif rating == 1.5 %}
+                    <span class="fa fa-star checked"></span>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    {% elif rating == 2 %}
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+
+                    {% elif rating == 2.5 %}
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+
+                    {%elif rating == 3 %}
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    {%elif rating == 3.5 %}
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    {%elif rating == 4 %}
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    {%elif rating == 4.5 %}
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    
+                    <span class="fa fa-star"></span>
+                    {%elif rating == 5 %}
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked "></span>
+
+                    {% endif %}
                     </div>
                 </div> 
 
@@ -46,7 +102,7 @@
 
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
                     <div class="chip" style="margin-bottom: 20px;">
-                        <img src="avatar.png" alt="Person" class="avatar">             
+                        <img src="avatar.png" alt= "user" class="avatar">             
                     </div> 
                 </div>
 
@@ -87,38 +143,67 @@
                     <ol>
                     {%for i in range (0,len)%}
                         <li class = "boxed text-white"><p><img src = picts[i] style= "width:100px; height:100px" align = "left"></p><p>{{res_names[i]['name']}}</p><p>{{trading[i]}}</p>
-                        {% if stars[i] == 1 %}
+                            {% if stars[i] == 1  %}
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            {% elif stars[i] == 1.5 %}
+                        <span class="fa fa-star checked"></span>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        {% elif stars[i] == 2 %}
+                        <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
+    
+                        {% elif stars[i] == 2.5 %}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <i class="fas fa-star-half-alt"></i>
                         <span class="fa fa-star"></span>
-                    {% elif stars[i] == 2 %}
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    {%elif stars[i] == 3 %}
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    {%elif stars[i] == 4 %}
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    {%elif stars[i] == 5%}
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked "></span>
-
-                    {% endif %}
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+    
+                        {%elif stars[i] == 3 %}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        {%elif stars[i] == 3.5 %}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        {%elif stars[i] == 4 %}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        {%elif stars[i] == 4.5 %}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        
+                        <span class="fa fa-star"></span>
+                        {%elif stars[i] == 5 %}
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked "></span>
+    
+                        {% endif %}
                         </li>
                     {%endfor%}
                     </ol>
