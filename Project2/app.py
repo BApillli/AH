@@ -40,12 +40,12 @@ def index():
                 rating = stars(restaurants)
                 review = review['r.text']
                 address = name[2]
-
+                pictIDs = main.get_photos(name[0])
                 #print(rating)
                 # returns top restaurant with information followed by list of extra restaurants
                 # goes to top restaurant with information followed by list of extra restaurants
                 print('SECOND PAGE')
-                return render_template('secondpage.html', form=form,len = len(restaurants),res_names=restaurants,stars = rating,picts = picts,trading = trade, review=review, best_res=name[1], address=address) 
+                return render_template('secondpage.html', form=form,len = len(restaurants),res_names=restaurants,stars = rating,pictIDs=pictIDs,trading = trade, review=review, best_res=name[1], address=address) 
 
             else :
                 print('THERE IS NO REVIEW')
