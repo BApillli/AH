@@ -1,5 +1,4 @@
 ﻿c
-{id:Restaurants}
 {id:Breakfast & Brunch}
 {id:Mexican}
 {id:Tacos}
@@ -14,11 +13,9 @@
 {id:Nightlife}
 {id:American (Traditional)}
 {id:Beer Gardens}
-{id:Event Planning & Services}
 {id:Lounges}
 {id:Venues & Event Spaces}
 {id:Sports Bars}
-{id:Food}
 {id:Cafes}
 {id:Seafood}
 {id:Sushi Bars}
@@ -41,22 +38,13 @@
 {id:Bakeries}
 {id:Salad}
 {id:Latin American}
-{id:Flowers & Gifts}
-{id:Art Galleries}
 {id:Coffee & Tea}
-{id:Arts & Entertainment}
-{id:Museums}
 {id:Local Flavor}
-{id:Shopping Centers}
-{id:Shopping}
-{id:Florists}
 {id:Wine Bars}
 {id:French}
 {id:Ice Cream & Frozen Yogurt}
 {id:Convenience Stores}
 {id:Hot Dogs}
-{id:Gas Stations}
-{id:Automotive}
 {id:Food Stands}
 {id:Comfort Food}
 {id:Cocktail Bars}
@@ -71,28 +59,15 @@
 {id:Beer}
 {id:Wine & Spirits}
 {id:Food Trucks}
-{id:Internet Cafes}
 {id:Irish}
 {id:Hawaiian}
 {id:Poke}
-{id:Department Stores}
-{id:Accessories}
-{id:Men's Clothing}
-{id:Fashion}
-{id:Shoe Stores}
-{id:Women's Clothing}
 {id:Thai}
 {id:Farmers Market}
-{id:Car Wash}
-{id:Caterers}
 {id:Desserts}
 {id:Juice Bars & Smoothies}
 {id:Gluten-Free}
 {id:Indian}
-{id:Active Life}
-{id:Dance Studios}
-{id:Performing Arts}
-{id:Fitness & Instruction}
 {id:Brewpubs}
 {id:Breweries}
 {id:Greek}
@@ -104,30 +79,21 @@
 {id:Persian/Iranian}
 {id:Soup}
 {id:Custom Cakes}
-{id:Party & Event Planning}
 {id:Chicken Shop}
 {id:Noodles}
 {id:Meat Shops}
 {id:Southern}
 {id:Gastropubs}
 {id:Korean}
-{id:Music Venues}
 {id:Irish Pub}
-{id:Karaoke}
 {id:Coffee Roasteries}
 {id:Food Delivery Services}
 {id:Vegan}
-{id:Hotels & Travel}
-{id:Bed & Breakfast}
 {id:Buffets}
-{id:Swimming Pools}
-{id:Grocery}
 {id:German}
 {id:Caribbean}
 {id:Hungarian}
 {id:Donuts}
-{id:Mini Golf}
-{id:Golf}
 {id:Pakistani}
 {id:Russian}
 {id:Halal}
@@ -140,15 +106,9 @@
 {id:Acai Bowls}
 {id:Fish & Chips}
 {id:New Mexican Cuisine}
-{id:Indoor Playcentre}
-{id:Arcades}
-{id:Kids Activities}
-{id:Playgrounds}
 {id:Wineries}
 {id:Wine Tasting Room}
 {id:Modern European}
-{id:Adult Entertainment}
-{id:Strip Clubs}
 {id:Herbs & Spices}
 {id:Cambodian}
 {id:Art Classes}
@@ -169,22 +129,6 @@
 {id:Wraps}
 {id:Organic Stores}
 {id:Arabian}
-{id:Horse Racing}
-{id:Stadiums & Arenas}
-{id:Bowling}
-{id:Professional Services}
-{id:Clowns}
-{id:Marketing}
-{id:Magicians}
-{id:Bus Tours}
-{id:Tours}
-{id:Boat Charters}
-{id:Air Duct Cleaning}
-{id:Fire Protection Services}
-{id:Home Cleaning}
-{id:Home Services}
-{id:Office Cleaning}
-{id:Candy Stores}
 {id:Filipino}
 {id:Food Court}
 {id:Tea Rooms}
@@ -197,44 +141,20 @@
 {id:Ethiopian}
 {id:Bubble Tea}
 {id:Turkish}
-{id:Pool Halls}
 {id:Teppanyaki}
-{id:Personal Chefs}
 {id:Soul Food}
-{id:Health & Medical}
-{id:Massage Therapy}
-{id:Golf Lessons}
 {id:Polish}
-{id:Bingo Halls}
-{id:Community Service/Non-Profit}
-{id:Country Dance Halls}
 {id:Hotels}
 {id:Grilling Equipment}
-{id:Outdoor Furniture Stores}
-{id:Home & Garden}
-{id:Appliances}
 {id:Social Clubs}
 {id:Conveyor Belt Sushi}
-{id:Real Estate}
-{id:Real Estate Services}
-{id:Pet Services}
-{id:Pets}
-{id:Trampoline Parks}
-{id:Climbing}
 {id:Creperies}
 {id:Casinos}
 {id:Brasseries}
 {id:Festivals}
-{id:Religious Organizations}
-{id:Churches}
 {id:Burmese}
 {id:Kosher}
 {id:Cheese Shops}
-{id:Arts & Crafts}
-{id:Cooking Classes}
-{id:Nutritionists}
-{id:Cooking Schools}
-{id:Specialty Schools}
 {id:Lebanese}
 {id:Hookah Bars}
 {id:Bar Crawl}
@@ -243,295 +163,62 @@
 {id:Patisserie/Cake Shop}
 {id:Live/Raw Food}
 {id:Uzbek}
-{id:Drugstores}
-{id:Dentists}
-{id:General Dentistry}
-{id:Books}
-{id:Mags}
-{id:Music & Video}
-{id:Movers}
-{id:Psychologists}
-{id:Bookstores}
-{id:Life Coach}
-{id:Counseling & Mental Health}
-{id:Psychics}
-{id:Reiki}
-{id:Meditation Centers}
-{id:Supernatural Readings}
 {id:Trinidadian}
 {id:Eatertainment}
 {id:Bistros}
 {id:Seafood Markets}
 {id:Gelato}
 {id:Country Clubs}
-{id:Barbers}
-{id:Beauty & Spas}
-{id:Hair Salons}
 {id:Dominican}
 {id:Cheese Tasting Classes}
 {id:British}
-{id:Financial Services}
-{id:Check Cashing/Pay-day Loans}
-{id:Currency Exchange}
-{id:Gift Shops}
-{id:Animal Shelters}
 {id:Spanish}
-{id:Christmas Trees}
-{id:Health Markets}
 {id:Pretzels}
 {id:Shanghainese}
-{id:Vitamins & Supplements}
 {id:Colombian}
-{id:Parks}
-{id:Bounce House Rentals}
-{id:Party Equipment Rentals}
-{id:Furniture Stores}
-{id:Jewelry}
-{id:Outlet Stores}
 {id:Ethnic Grocery}
 {id:International Grocery}
 {id:Mongolian}
 {id:Piano Bars}
 {id:Falafel}
 {id:Smokehouse}
-{id:Spray Tanning}
-{id:Tanning Beds}
-{id:Tanning}
 {id:Distilleries}
 {id:African}
 {id:Cuban}
-{id:Middle Schools & High Schools}
-{id:Elementary Schools}
-{id:Preschools}
-{id:Hospitals}
-{id:Coffee & Tea Supplies}
-{id:Hostels}
 {id:Dim Sum}
 {id:Scandinavian}
-{id:Resorts}
-{id:Tobacco Shops}
 {id:Brazilian}
 {id:Malaysian}
-{id:Cinema}
-{id:Public Services & Government}
-{id:Libraries}
-{id:Doctors}
-{id:Cardiologists}
-{id:Emergency Medicine}
-{id:Pediatricians}
-{id:Sporting Goods}
-{id:Basque}
-{id:Macarons}
-{id:Photographers}
-{id:Event Photography}
-{id:Session Photography}
-{id:Golf Equipment Shops}
-{id:Amateur Sports Teams}
-{id:Campgrounds}
-{id:Lakes}
-{id:Musicians}
-{id:Used}
-{id:Vintage & Consignment}
-{id:Keys & Locksmiths}
-{id:Used Bookstore}
-{id:Personal Shopping}
-{id:Kitchen & Bath}
-{id:Flooring}
-{id:Foundation Repair}
-{id:Contractors}
-{id:Masonry/Concrete}
-{id:Club Crawl}
 {id:Chocolatiers & Shops}
-{id:Bartending Schools}
 {id:Wholesale Stores}
 {id:Puerto Rican}
-{id:Apartments}
 {id:Czech}
 {id:Belgian}
-{id:Day Spas}
 {id:Gay Bars}
-{id:Sports Clubs}
-{id:Soccer}
-{id:Recreation Centers}
-{id:Videos & Video Game Rental}
 {id:Popcorn Shops}
 {id:Wholesalers}
-{id:Restaurant Supplies}
-{id:Vinyl Records}
 {id:Moroccan}
-{id:Sports Wear}
 {id:Armenian}
-{id:Trainers}
 {id:Afghan}
-{id:Tennis}
-{id:Wedding Chapels}
-{id:Food Tours}
 {id:Izakaya}
-{id:Couriers & Delivery Services}
-{id:Leisure Centers}
-{id:Cultural Center}
 {id:Zoos}
-{id:Botanical Gardens}
-{id:Amusement Parks}
-{id:Rock Climbing}
-{id:Massage}
-{id:Medical Spas}
 {id:Honey}
-{id:Towing}
 {id:Ukrainian}
-{id:Appliances & Repair}
 {id:Indonesian}
-{id:Head Shops}
-{id:Discount Store}
-{id:Souvenir Shops}
-{id:Pet Stores}
 {id:Coffeeshops}
-{id:Hobby Shops}
 {id:Ethical Grocery}
 {id:Kombucha}
 {id:Beverage Store}
 {id:Singaporean}
-{id:Adult Education}
-{id:Gyms}
 {id:Oaxacan}
-{id:Tattoo}
-{id:Pawn Shops}
-{id:Piercing}
-{id:Funeral Services & Cemeteries}
-{id:Race Tracks}
 {id:Olive Oil}
-{id:Fireplace Services}
-{id:Party Supplies}
-{id:Batting Cages}
-{id:Yelp Events}
-{id:Weight Loss Centers}
-{id:Airports}
-{id:Security Systems}
-{id:DJs}
-{id:Argentine}
-{id:Water Stores}
-{id:Guest Houses}
-{id:Pool & Billiards}
 {id:Fondue}
 {id:Austrian}
-{id:Cards & Stationery}
-{id:Golf Equipment}
 {id:Venezuelan}
-{id:Community Centers}
-{id:Speakeasies}
-{id:Laundry Services}
-{id:Laundromat}
-{id:Dry Cleaning & Laundry}
 {id:Portuguese}
-{id:Empanadas}
-{id:Bikes}
-{id:Bike Repair/Maintenance}
 {id:Slovakian}
-{id:Tabletop Games}
-{id:Photography Stores & Services}
-{id:Eyewear & Opticians}
-{id:Mobile Phones}
-{id:Electronics}
-{id:Tires}
-{id:Optometrists}
 {id:Australian}
-{id:Veterinarians}
-{id:Graphic Design}
-{id:Vape Shops}
-{id:Delicatessen}
-{id:Nail Salons}
-{id:Cosmetics & Beauty Supply}
 {id:Themed Cafes}
-{id:Bartenders}
-{id:Lawyers}
-{id:Business Consulting}
-{id:Tax Services}
-{id:Wills}
-{id:Trusts}
-{id:& Probates}
-{id:Estate Planning Law}
-{id:Bankruptcy Law}
-{id:Tax Law}
-{id:Supper Clubs}
-{id:Hardware Stores}
-{id:Building Supplies}
-{id:Pharmacy}
-{id:Handyman}
-{id:Archery}
-{id:Horseback Riding}
-{id:Art Museums}
-{id:Transportation}
-{id:Airport Shuttles}
-{id:Taxis}
-{id:Airport Lounges}
-{id:Nurseries & Gardening}
-{id:Pumpkin Patches}
-{id:Pick Your Own Farms}
-{id:Sicilian}
-{id:Ski Resorts}
-{id:Furniture Reupholstery}
-{id:Motorcycle Repair}
-{id:Auto Detailing}
-{id:Auto Customization}
-{id:Auto Upholstery}
-{id:RV Repair}
-{id:Auto Repair}
-{id:Pop-Up Restaurants}
-{id:Traditional Clothing}
-{id:Tiki Bars}
-{id:Parenting Classes}
-{id:Health Retreats}
-{id:Honduran}
-{id:Yoga}
-{id:Hunting & Fishing Supplies}
-{id:Outdoor Gear}
-{id:Photo Booth Rentals}
-{id:Antiques}
-{id:Golf Cart Dealers}
-{id:Pool & Hot Tub Service}
-{id:Hot Tub & Pool}
-{id:Pita}
-{id:Poutineries}
-{id:Hair Stylists}
-{id:Nail Technicians}
-{id:Holiday Decorations}
-{id:Tuscan}
-{id:Clothing Rental}
-{id:Screen Printing/T-Shirt Printing}
-{id:Screen Printing}
-{id:Web Design}
-{id:Advertising}
-{id:Drywall Installation & Repair}
-{id:Painters}
-{id:Officiants}
-{id:Physical Therapy}
-{id:Shared Office Spaces}
-{id:Real Estate Agents}
-{id:Property Management}
-{id:Hair Extensions}
-{id:Kids Hair Salons}
-{id:Shaved Snow}
-{id:RV Parks}
-{id:Vacation Rentals}
-{id:Post Offices}
-{id:Mass Media}
 {id:Champagne Bars}
-{id:Estate Liquidation}
-{id:Virtual Reality Centers}
-{id:Pet Adoption}
-{id:Ophthalmologists}
-{id:Dance Schools}
-{id:Art Schools}
 {id:Hotel bar}
-{id:Naturopathic/Holistic}
-{id:Medical Centers}
-{id:Medical Cannabis Referrals}
-{id:Cannabis Clinics}
-{id:Acupuncture}
 {id:Beer Garden}
-{id:Unofficial Yelp Events}
-{id:Diagnostic Services}
-{id:Laboratory Testing}
-{id:Gutter Services}
-{id:Window Washing}
-{id:Pressure Washers}

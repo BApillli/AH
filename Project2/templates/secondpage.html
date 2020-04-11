@@ -145,7 +145,7 @@
                 {%endfor%}
                     <ol>
                     {%for i in range (0,len)%}
-                        <li class = "boxed text-white"><p><img src = {{ '../static/images/IMG-' + pictIDs[i] + '.JPG' }} style= "width:100px; height:100px" align = "left"></p><p>{{res_names[i]['name']}}</p><p>{{trading[i]}}</p>
+                        <li class = "boxed text-white"><p><img src = {{pictIDs[i]}} style= "width:100px; height:100px" align = "left"></p><p>{{res_names[i]['name']}}</p><p>{{trading[i]}}</p>
                             {% if stars[i] == 1  %}
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star"></span>

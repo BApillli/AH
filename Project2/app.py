@@ -33,14 +33,15 @@ def index():
             if review != '':
 
                 # gets the user of the review
-                user = review['m.id'] #make sure this actually works
+                user = review['m.id']
                 # gets the list of restaurants
                 restaurants = main.get_top_five(user, form.city.data, form.cuisine.data, form.day.data, form.time.data.strftime("%H:%M"))
+
                 trade = trading_hours(restaurants, form.day.data)
-                rating = stars(restaurants)
+                rating = star_rating(restaurants)
                 review = review['r.text']
                 address = name[2]
-                pictIDs = main.get_photos(name[0])
+                pictIDs = images(main.get_photos(name[0]))
                 #print(rating)
                 # returns top restaurant with information followed by list of extra restaurants
                 # goes to top restaurant with information followed by list of extra restaurants
@@ -83,12 +84,17 @@ def trading_hours(buss,day):
     return hours    
 
 ''' Returns the star rating for the list of restaurants '''
-def stars(buss):
+def star_rating(buss):
     stars = []
     for i in range(0, len(buss)):
         stars.append(buss[i]['stars'])
     return stars
 
+''' Changes format of photo_id to source strings '''
+def images(photos):
+    for i in range(0, len(photos)):
+        photos[0]['p.id'] = "../static/images/_" + photos[0]['p.id'] + ".JPG"
+    return photos    
 
 if __name__ == '__main__':
     app.run(debug=True)
