@@ -59,6 +59,7 @@ def all_info(city, day, time, cuisine):
     print(" ----- photo ids ----------")
     photos = get_photos(str(business[0]))
     print(photos)
+    return restaurants
     
 def cat_buss(buss, index):
     entry = buss[index]["n"]
@@ -154,6 +155,15 @@ def get_top_five(user_id, city, cuisine, day, time):
             restaurants.append(store[i]['f'])
         if j == 5:
             break    
+    return restaurants
+
+def get_default_res(city):
+    query = "MATCH (f:Business {city: \"" + city + "\"}) RETURN f ORDER by f.stars DESC LIMIT 5"
+    restaurants = []
+    store = graph.run(query).data()
+    for i in range(0, len(store)):
+        restaurants.append(store[i]['f'])
+
     return restaurants
 
 if __name__ == "__main__":

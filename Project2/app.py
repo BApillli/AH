@@ -37,6 +37,10 @@ def index():
                 # gets the list of restaurants
                 best_buss_rating = name[3]
                 restaurants = main.get_top_five(user, form.city.data, form.cuisine.data, form.day.data, form.time.data.strftime("%H:%M"))
+                if restaurants == []:
+                    print("NO LIST OF RESTAURANTS")
+                    restaurants = main.get_default_res(form.city.data)
+
                 trade = trading_hours(restaurants, form.day.data)
                 rating = star_rating(restaurants)
                 review = review['r.text']
@@ -64,18 +68,6 @@ def index():
         #goes to the welcome page
         return render_template('firstpage.html', form=form)
 
-''' for later '''
-@app.route('/results', methods = ['GET', 'POST'])
-def results(data):
-    if form.validate_on_submit():
-        flash('User wants a restuarant in the city {}, with the cuisine {}, from the time {}, on the day {}'.format(
-            form.city.data, form.cuisine.data, form.time.data, form.day.data))
-        name = main.all_info(form.city.data, form.day.data, form.time.data.strftime("%H:%M"), form.cuisine.data)
-        return render_template('index.html', form=form,len = len(name),res_names=name,stars = stars,picts = picts,trading = trading)   
-    else:
-        #just returns hard coded stuff
-        return render_template('index.html', form=form,len = len(res_names),res_names=res_names,stars = stars,picts = picts,trading = trading, review=review)
-
 ''' Returns the trading hours for the list of restaurants '''
 def trading_hours(buss,day):
     hours = []
@@ -94,7 +86,7 @@ def star_rating(buss):
 def images(photos):
     img = []
     for i in range(0, len(photos)):
-        photos[0]['p.id'] = "../static/images/_" + photos[0]['p.id'] + ".JPG"
+        photos[0]['p.id'] = "../static/images/_" + photos[0]['p.id'] + ".jpg"
         img.append(photos[0]['p.id'])
     return img  
 
