@@ -86,7 +86,7 @@ def star_rating(buss):
 def images(photos):
     img = []
     for i in range(0, len(photos)):
-        photos[0]['p.id'] = "../static/images/_" + photos[0]['p.id'] + ".jpg"
+        photos[0]['p.id'] = "../static/photos/_" + photos[0]['p.id'] + ".jpg"
         img.append(photos[0]['p.id'])
     return img  
 
