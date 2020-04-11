@@ -1,224 +1,448 @@
-﻿c
-{id:Breakfast & Brunch}
-{id:Mexican}
-{id:Tacos}
-{id:Tex-Mex}
-{id:Fast Food}
-{id:Italian}
-{id:Pizza}
-{id:Chicken Wings}
-{id:Chinese}
-{id:Pubs}
-{id:Bars}
-{id:Nightlife}
-{id:American (Traditional)}
-{id:Beer Gardens}
-{id:Lounges}
-{id:Venues & Event Spaces}
-{id:Sports Bars}
-{id:Cafes}
-{id:Seafood}
-{id:Sushi Bars}
-{id:Barbeque}
-{id:Ethnic Food}
-{id:Specialty Food}
-{id:Vegetarian}
-{id:Mediterranean}
-{id:Middle Eastern}
-{id:Sandwiches}
-{id:Burgers}
-{id:Asian Fusion}
-{id:Japanese}
-{id:Ramen}
-{id:Tapas Bars}
-{id:Taiwanese}
-{id:American (New)}
-{id:Diners}
-{id:Vietnamese}
-{id:Bakeries}
-{id:Salad}
-{id:Latin American}
-{id:Coffee & Tea}
-{id:Local Flavor}
-{id:Wine Bars}
-{id:French}
-{id:Ice Cream & Frozen Yogurt}
-{id:Convenience Stores}
-{id:Hot Dogs}
-{id:Food Stands}
-{id:Comfort Food}
-{id:Cocktail Bars}
-{id:Steakhouses}
-{id:Tapas/Small Plates}
-{id:Imported Food}
-{id:Delis}
-{id:Bagels}
-{id:Fruits & Veggies}
-{id:Farms}
-{id:Beer Bar}
-{id:Beer}
-{id:Wine & Spirits}
-{id:Food Trucks}
-{id:Irish}
-{id:Hawaiian}
-{id:Poke}
-{id:Thai}
-{id:Farmers Market}
-{id:Desserts}
-{id:Juice Bars & Smoothies}
-{id:Gluten-Free}
-{id:Indian}
-{id:Brewpubs}
-{id:Breweries}
-{id:Greek}
-{id:Cheesesteaks}
-{id:Laotian}
-{id:Dive Bars}
-{id:Dance Clubs}
-{id:Street Vendors}
-{id:Persian/Iranian}
-{id:Soup}
-{id:Custom Cakes}
-{id:Chicken Shop}
-{id:Noodles}
-{id:Meat Shops}
-{id:Southern}
-{id:Gastropubs}
-{id:Korean}
-{id:Irish Pub}
-{id:Coffee Roasteries}
-{id:Food Delivery Services}
-{id:Vegan}
-{id:Buffets}
-{id:German}
-{id:Caribbean}
-{id:Hungarian}
-{id:Donuts}
-{id:Pakistani}
-{id:Russian}
-{id:Halal}
-{id:Do-It-Yourself Food}
-{id:Rotisserie Chicken}
-{id:Cajun/Creole}
-{id:Whiskey Bars}
-{id:Cupcakes}
-{id:Pasta Shops}
-{id:Acai Bowls}
-{id:Fish & Chips}
-{id:New Mexican Cuisine}
-{id:Wineries}
-{id:Wine Tasting Room}
-{id:Modern European}
-{id:Herbs & Spices}
-{id:Cambodian}
-{id:Art Classes}
-{id:Education}
-{id:Wedding Planning}
-{id:Knife Sharpening}
-{id:Local Services}
-{id:Butcher}
-{id:Pan Asian}
-{id:Jazz & Blues}
-{id:Salvadoran}
-{id:Kebab}
-{id:Cantonese}
-{id:Szechuan}
-{id:Hot Pot}
-{id:Laser Tag}
-{id:Peruvian}
-{id:Wraps}
-{id:Organic Stores}
-{id:Arabian}
-{id:Filipino}
-{id:Food Court}
-{id:Tea Rooms}
-{id:Comedy Clubs}
-{id:Dinner Theater}
-{id:Himalayan/Nepalese}
-{id:Shaved Ice}
-{id:Wine Tasting Classes}
-{id:Tasting Classes}
-{id:Ethiopian}
-{id:Bubble Tea}
-{id:Turkish}
-{id:Teppanyaki}
-{id:Soul Food}
-{id:Polish}
-{id:Hotels}
-{id:Grilling Equipment}
-{id:Social Clubs}
-{id:Conveyor Belt Sushi}
-{id:Creperies}
-{id:Casinos}
-{id:Brasseries}
-{id:Festivals}
-{id:Burmese}
-{id:Kosher}
-{id:Cheese Shops}
-{id:Lebanese}
-{id:Hookah Bars}
-{id:Bar Crawl}
-{id:Cafeteria}
-{id:Waffles}
-{id:Patisserie/Cake Shop}
-{id:Live/Raw Food}
-{id:Uzbek}
-{id:Trinidadian}
-{id:Eatertainment}
-{id:Bistros}
-{id:Seafood Markets}
-{id:Gelato}
-{id:Country Clubs}
-{id:Dominican}
-{id:Cheese Tasting Classes}
-{id:British}
-{id:Spanish}
-{id:Pretzels}
-{id:Shanghainese}
-{id:Colombian}
-{id:Ethnic Grocery}
-{id:International Grocery}
-{id:Mongolian}
-{id:Piano Bars}
-{id:Falafel}
-{id:Smokehouse}
-{id:Distilleries}
-{id:African}
-{id:Cuban}
-{id:Dim Sum}
-{id:Scandinavian}
-{id:Brazilian}
-{id:Malaysian}
-{id:Chocolatiers & Shops}
-{id:Wholesale Stores}
-{id:Puerto Rican}
-{id:Czech}
-{id:Belgian}
-{id:Gay Bars}
-{id:Popcorn Shops}
-{id:Wholesalers}
-{id:Moroccan}
-{id:Armenian}
-{id:Afghan}
-{id:Izakaya}
-{id:Zoos}
-{id:Honey}
-{id:Ukrainian}
-{id:Indonesian}
-{id:Coffeeshops}
-{id:Ethical Grocery}
-{id:Kombucha}
-{id:Beverage Store}
-{id:Singaporean}
-{id:Oaxacan}
-{id:Olive Oil}
-{id:Fondue}
-{id:Austrian}
-{id:Venezuelan}
-{id:Portuguese}
-{id:Slovakian}
-{id:Australian}
-{id:Themed Cafes}
-{id:Champagne Bars}
-{id:Hotel bar}
-{id:Beer Garden}
+﻿c.id
+Acai Bowls
+Accessories
+Active Life
+Adult Education
+Adult Entertainment
+Advertising
+Afghan
+African
+Airport Shuttles
+Airports
+Amateur Sports Teams
+American (New)
+American (Traditional)
+Amusement Parks
+Animal Shelters
+Antiques
+Apartments
+Appliances
+Arabian
+Arcades
+Argentine
+Armenian
+Art Classes
+Art Galleries
+Art Schools
+Arts & Crafts
+Arts & Entertainment
+Asian Fusion
+Australian
+Auto Repair
+Automotive
+Bagels
+Bakeries
+Bangladeshi
+Banks & Credit Unions
+Bar Crawl
+Barbeque
+Bars
+Bartenders
+Bartending Schools
+Basque
+Batting Cages
+Beaches
+Beauty & Spas
+Bed & Breakfast
+Beer
+Beer Bar
+Beer Gardens
+Belgian
+Bespoke Clothing
+Beverage Store
+Bike Rentals
+Bistros
+Blow Dry/Out Services
+Boat Charters
+Boat Dealers
+Boat Repair
+Books
+Bookstores
+Botanical Gardens
+Bowling
+Brasseries
+Brazilian
+Breakfast & Brunch
+Breweries
+Brewpubs
+Bridal
+British
+Bubble Tea
+Buffets
+Building Supplies
+Burgers
+Burmese
+Bus Tours
+Butcher
+CSA
+Cafes
+Cafeteria
+Cajun/Creole
+Cambodian
+Campgrounds
+Candy Stores
+Cantonese
+Car Dealers
+Caribbean
+Casinos
+Caterers
+Champagne Bars
+Cheese Shops
+Cheese Tasting Classes
+Cheesesteaks
+Chicken Shop
+Chicken Wings
+Chinese
+Chocolatiers & Shops
+Churches
+Churros
+Cideries
+Cigar Bars
+Cinema
+Clowns
+Cocktail Bars
+Coffee & Tea
+Coffee Roasteries
+Colleges & Universities
+Colombian
+Comedy Clubs
+Comfort Food
+Community Centers
+Community Service/Non-Profit
+Contractors
+Convenience Stores
+Cooking Classes
+Cooking Schools
+Cosmetics & Beauty Supply
+Counseling & Mental Health
+Country Clubs
+Couriers & Delivery Services
+Creperies
+Cuban
+Cupcakes
+Custom Cakes
+Dance Clubs
+Day Spas
+Delicatessen
+Delis
+Dentists
+Department Stores
+Desserts
+Diagnostic Services
+Dim Sum
+Diners
+Dinner Theater
+Distilleries
+Dive Bars
+Do-It-Yourself Food
+Doctors
+Dominican
+Donuts
+Drugstores
+Dry Cleaning & Laundry
+Eatertainment
+Education
+Electricians
+Empanadas
+Ethical Grocery
+Ethiopian
+Ethnic Food
+Ethnic Grocery
+Event Planning & Services
+Falafel
+Farmers Market
+Farms
+Fashion
+Fast Food
+Festivals
+Filipino
+Financial Services
+Fish & Chips
+Fitness & Instruction
+Floral Designers
+Florists
+Flowers & Gifts
+Fondue
+Food
+Food Banks
+Food Court
+Food Delivery Services
+Food Stands
+Food Tours
+Food Trucks
+Formal Wear
+French
+Fruits & Veggies
+Funeral Services & Cemeteries
+Gardeners
+Gas Stations
+Gastropubs
+Gay Bars
+Gelato
+General Dentistry
+German
+Gift Shops
+Gluten-Free
+Golf
+Golf Cart Dealers
+Golf Lessons
+Greek
+Grocery
+Gutter Services
+Gyms
+Hair Extensions
+Hair Removal
+Hair Salons
+Hair Stylists
+Halal
+Hardware Stores
+Hawaiian
+Health & Medical
+Health Markets
+Herbs & Spices
+Hiking
+Himalayan/Nepalese
+Hobby Shops
+Holiday Decorations
+Home & Garden
+Home Cleaning
+Home Services
+Honduran
+Hookah Bars
+Hostels
+Hot Dogs
+Hot Pot
+Hotels
+Hotels & Travel
+Hungarian
+Iberian
+Ice Cream & Frozen Yogurt
+Imported Food
+Indian
+Indoor Playcentre
+Interior Design
+International Grocery
+Internet Cafes
+Irish
+Irish Pub
+Italian
+Izakaya
+Japanese
+Jazz & Blues
+Jewelry
+Juice Bars & Smoothies
+Karaoke
+Kebab
+Keys & Locksmiths
+Kids Activities
+Knife Sharpening
+Korean
+Kosher
+Laboratory Testing
+Lakes
+Landscaping
+Laotian
+Laser Tag
+Latin American
+Laundromat
+Laundry Services
+Lebanese
+Leisure Centers
+Libraries
+Live/Raw Food
+Local Flavor
+Local Services
+Lounges
+Macarons
+Magicians
+Mags
+Makeup Artists
+Malaysian
+Marinas
+Marketing
+Martial Arts
+Massage
+Massage Therapy
+Meat Shops
+Mediterranean
+Men's Clothing
+Mexican
+Middle Eastern
+Mini Golf
+Modern European
+Mongolian
+Moroccan
+Museums
+Music & Video
+Music Venues
+Musicians
+Nail Salons
+New Mexican Cuisine
+Nightlife
+Noodles
+Nurseries & Gardening
+Nutritionists
+Olive Oil
+Ophthalmologists
+Optometrists
+Organic Stores
+Outlet Stores
+Paint & Sip
+Paint-Your-Own Pottery
+Pakistani
+Pan Asian
+Parks
+Party & Event Planning
+Party Equipment Rentals
+Party Supplies
+Pasta Shops
+Patisserie/Cake Shop
+Performing Arts
+Persian/Iranian
+Personal Assistants
+Personal Chefs
+Personal Shopping
+Peruvian
+Pets
+Pharmacy
+Photo Booth Rentals
+Photography Stores & Services
+Piano Bars
+Pick Your Own Farms
+Piercing
+Pizza
+Playgrounds
+Plus Size Fashion
+Poke
+Polish
+Pool & Billiards
+Pool Halls
+Pop-Up Restaurants
+Popcorn Shops
+Portuguese
+Poutineries
+Pressure Washers
+Pretzels
+Printing Services
+Professional Services
+Public Markets
+Public Services & Government
+Pubs
+Puerto Rican
+Pumpkin Patches
+Ramen
+Real Estate
+Real Estate Agents
+Recreation Centers
+Reflexology
+Religious Organizations
+Resorts
+Restaurant Supplies
+Restaurants
+Rock Climbing
+Roofing
+Russian
+Salad
+Salvadoran
+Sandwiches
+Scandinavian
+Seafood
+Seafood Markets
+Shanghainese
+Shaved Ice
+Shoe Stores
+Shopping
+Shopping Centers
+Sicilian
+Siding
+Singaporean
+Skating Rinks
+Ski Resorts
+Skin Care
+Slovakian
+Smokehouse
+Soccer
+Social Clubs
+Soul Food
+Soup
+Southern
+Spanish
+Speakeasies
+Specialty Food
+Specialty Schools
+Sporting Goods
+Sports Bars
+Sports Clubs
+Sports Wear
+Stadiums & Arenas
+Steakhouses
+Street Vendors
+Strip Clubs
+Summer Camps
+Supper Clubs
+Sushi Bars
+Swimming Pools
+Syrian
+Szechuan
+Tabletop Games
+Tacos
+Tai Chi
+Taiwanese
+Tanning
+Tapas Bars
+Tapas/Small Plates
+Tasting Classes
+Tattoo
+Taxis
+Tea Rooms
+Team Building Activities
+Tennis
+Teppanyaki
+Tex-Mex
+Thai
+Themed Cafes
+Thrift Stores
+Ticket Sales
+Tiki Bars
+Tobacco Shops
+Tours
+Towing
+Toy Stores
+Transportation
+Travel Services
+Trinidadian
+Turkish
+Tuscan
+Ukrainian
+Used
+Uzbek
+Vegan
+Vegetarian
+Venezuelan
+Venues & Event Spaces
+Videos & Video Game Rental
+Vietnamese
+Vintage & Consignment
+Visitor Centers
+Vitamins & Supplements
+Waffles
+Waxing
+Web Design
+Wedding Planning
+Weight Loss Centers
+Whiskey Bars
+Wholesale Stores
+Wholesalers
+Wigs
+Window Washing
+Windows Installation
+Wine & Spirits
+Wine Bars
+Wine Tasting Classes
+Wine Tasting Room
+Wine Tours
+Wineries
+Women's Clothing
+Wraps
+Yelp Events
+Yoga
