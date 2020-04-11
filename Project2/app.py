@@ -92,9 +92,11 @@ def star_rating(buss):
 
 ''' Changes format of photo_id to source strings '''
 def images(photos):
+    img = []
     for i in range(0, len(photos)):
         photos[0]['p.id'] = "../static/images/_" + photos[0]['p.id'] + ".JPG"
-    return photos    
+        img.append(photos[0]['p.id'])
+    return img  
 
 if __name__ == '__main__':
     app.run(debug=True)
