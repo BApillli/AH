@@ -46,6 +46,7 @@ def index():
                 review = review['r.text']
                 address = name[2]
                 pictIDs = images(main.get_photos(name[0]))
+                pictIDs[0] = "../static/photos/KMNJSO7UmarMmlDropCWAg.jpg" # hardcoded
                 #print(rating)
                 # returns top restaurant with information followed by list of extra restaurants
                 # goes to top restaurant with information followed by list of extra restaurants
