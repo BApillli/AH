@@ -35,8 +35,8 @@ def index():
                 # gets the user of the review
                 user = review['m.id']
                 # gets the list of restaurants
+                best_buss_rating = name[3]
                 restaurants = main.get_top_five(user, form.city.data, form.cuisine.data, form.day.data, form.time.data.strftime("%H:%M"))
-
                 trade = trading_hours(restaurants, form.day.data)
                 rating = star_rating(restaurants)
                 review = review['r.text']
@@ -46,7 +46,7 @@ def index():
                 # returns top restaurant with information followed by list of extra restaurants
                 # goes to top restaurant with information followed by list of extra restaurants
                 print('SECOND PAGE')
-                return render_template('secondpage.html', form=form,len = len(restaurants),res_names=restaurants,stars = rating,pictIDs=pictIDs,trading = trade, review=review, best_res=name[1], address=address) 
+                return render_template('secondpage.html', form=form,len = len(restaurants),res_names=restaurants,stars = rating,pictIDs=pictIDs,trading = trade, review=review, best_res=name[1], address=address, rating=best_buss_rating) 
 
             else :
                 print('THERE IS NO REVIEW')
