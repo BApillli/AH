@@ -100,7 +100,7 @@ def star_rating(buss):
 def images(photos):
     img = []
     for i in range(0, len(photos)):
-        photos[i]['p.id'] = "../static/photos/_" + photos[i]['p.id'] + ".jpg"
+        photos[i]['p.id'] = "../static/photos/" + photos[i]['p.id'] + ".jpg"
         img.append(photos[i]['p.id'])
     return img  
 
@@ -129,7 +129,7 @@ def get_extra_photos(restaurants):
     for i in range(0, len(restaurants)):
         temp = main.get_photos(restaurants[i]['id'])
         for j in range (0, len(temp)):
-            temp2.append("../static/photos/_" + temp[j]['p.id'] + ".jpg")    
+            temp2.append("../static/photos/" + temp[j]['p.id'] + ".jpg")    
         photos.append(temp2)
         temp2 = []
     return photos    
