@@ -24,6 +24,7 @@ picts = ["../static/images/IMG-4316.JPG","../static/images/IMG-4317.JPG","../sta
 trading = ["24hrs","16:30 - 22:00","17:00 - 02:00"]
 review = "blah blah blah"
 name = []
+loc = []
 
 @app.route('/')
 @app.route('/index', methods = ['GET', 'POST'])
@@ -54,8 +55,9 @@ def index():
                 photos = main.get_photos(name[0])
                 pictIDs = images(photos, name[0])
                 captions = get_captions(photos)
+                #latitude and longitude
+                locations = get_location(restaurants)
                 lenp = 0
-
                 if pictIDs == []:
                     lenp = 1
                     pictIDs[0] = "./static/images/IMG-4316.JPG" # replace with default image src
@@ -70,7 +72,7 @@ def index():
                     stars = rating,
                     pictIDs=pictIDs,
                     lenp = lenp,
-
+                    locations = locations,
                     trading = trade, 
                     review=review, 
                     best_res=name[1], 
