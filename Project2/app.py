@@ -6,11 +6,6 @@ from config import Config
 from datetime import datetime
 import csv
 import random
-import json
-
-api_key = 'ih6fZTuKzyCd2vnH764ngXMYkLMngq4vin3lWmKC11G-s \
-            F9tb1OqCIGAXgDgvkz4X-tQZBbnzdExYYvsy4nKvWdj2d7du1Eavqoa0kV6wt0FfiaDRBscBwhSmb10XnYx'
-headers = {'Authorization': 'Bearer %s' % api_key}
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -51,6 +46,7 @@ def index():
                 rating = star_rating(restaurants)
                 review = review['r.text']
                 address = name[2]
+                extra_addresses = get_addresses(restaurants)
                 photos = main.get_photos(name[0])
                 pictIDs = images(photos, name[0])
                 captions = get_captions(photos)
@@ -76,6 +72,7 @@ def index():
                     review=review, 
                     best_res=name[1], 
                     address=address, 
+                    extra_adresses=extra_addresses,
                     rating=best_buss_rating, 
                     captions=captions
                     ) 
@@ -149,6 +146,13 @@ def get_extra_photos(restaurants):
         photos.append(temp2)
         temp2 = []
     return photos    
+
+''' gets the addresses for the list of restaurants '''
+def get_addresses(restaurants):
+    address = []
+    for i in range(0, len(restaurants)):
+        address.append(restaurants[i]['address'] + ", " + restaurants[i]['city'] + ", " + restaurants[i]['state'])        
+    return address
 
 if __name__ == '__main__':
     app.run(debug=True)
