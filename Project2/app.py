@@ -56,7 +56,7 @@ def index():
                     res_names=restaurants,
                     stars = rating,
                     pictIDs=pictIDs,
-                    lenp = random.randint(1,len(pictIDs))
+                    lenp = random.randint(1,len(pictIDs)),
 
                     trading = trade, 
                     review=review, 
