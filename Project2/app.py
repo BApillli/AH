@@ -45,13 +45,23 @@ def index():
                 rating = star_rating(restaurants)
                 review = review['r.text']
                 address = name[2]
-                pictIDs = images(main.get_photos(name[0]))
-                #pictIDs[0] = "../static/photos/KMNJSO7UmarMmlDropCWAg.jpg" # hardcoded
-                #print(rating)
-                # returns top restaurant with information followed by list of extra restaurants
-                # goes to top restaurant with information followed by list of extra restaurants
+                photos = main.get_photos(name[0])
+                pictIDs = images(photos)
+                captions = get_captions(photos)
                 print('SECOND PAGE')
-                return render_template('secondpage.html', form=form,len = len(restaurants),res_names=restaurants,stars = rating,pictIDs=pictIDs,trading = trade, review=review, best_res=name[1], address=address, rating=best_buss_rating) 
+                return render_template('secondpage.html',
+                    form=form,
+                    len = len(restaurants),
+                    res_names=restaurants,
+                    stars = rating,
+                    pictIDs=pictIDs,
+                    trading = trade, 
+                    review=review, 
+                    best_res=name[1], 
+                    address=address, 
+                    rating=best_buss_rating, 
+                    captions=captions
+                    ) 
 
             else :
                 print('THERE IS NO REVIEW')
@@ -87,9 +97,16 @@ def star_rating(buss):
 def images(photos):
     img = []
     for i in range(0, len(photos)):
-        photos[0]['p.id'] = "../static/photos/" + photos[0]['p.id'] + ".jpg"
-        img.append(photos[0]['p.id'])
+        photos[i]['p.id'] = "../static/photos/" + photos[i]['p.id'] + ".jpg"
+        img.append(photos[i]['p.id'])
     return img  
+
+''' Gets captions for the images '''    
+def get_captions(photos):
+    cap = []
+    for i in range(0, len(photos)):
+        cap.append(photos[i]['p.caption'])
+    return cap    
 
 if __name__ == '__main__':
     app.run(debug=True)
