@@ -6,6 +6,12 @@ from config import Config
 from datetime import datetime
 import csv
 import random
+import requests
+import json
+
+api_key = 'ih6fZTuKzyCd2vnH764ngXMYkLMngq4vin3lWmKC11G-s \
+            F9tb1OqCIGAXgDgvkz4X-tQZBbnzdExYYvsy4nKvWdj2d7du1Eavqoa0kV6wt0FfiaDRBscBwhSmb10XnYx'
+headers = {'Authorization': 'Bearer %s' % api_key}
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -46,7 +52,7 @@ def index():
                 review = review['r.text']
                 address = name[2]
                 photos = main.get_photos(name[0])
-                pictIDs = images(photos)
+                pictIDs = images(photos, name[0])
                 captions = get_captions(photos)
                 lenp = 0
 
@@ -105,11 +111,12 @@ def star_rating(buss):
     return stars
 
 ''' Changes format of photo_id to source strings '''
-def images(photos):
+def images(photos, id):
     img = []
     for i in range(0, len(photos)):
-        photos[i]['p.id'] = "../static/photos/" + photos[i]['p.id'] + ".jpg"
-        img.append(photos[i]['p.id'])
+        #photos[i]['p.id'] = "../static/photos/" + photos[i]['p.id'] + ".jpg"
+        data = "https://s3-media2.fl.yelpcdn.com/bphoto/" + photos[i]['p.id'] + "/o.jpg"
+        img.append(data)
     return img  
 
 ''' Gets captions for the images '''    
@@ -137,7 +144,7 @@ def get_extra_photos(restaurants):
     for i in range(0, len(restaurants)):
         temp = main.get_photos(restaurants[i]['id'])
         for j in range (0, len(temp)):
-            temp2.append("../static/photos/" + temp[j]['p.id'] + ".jpg")    
+            temp2.append("https://s3-media2.fl.yelpcdn.com/bphoto/" + temp[i]['p.id'] + "/o.jpg")    
         photos.append(temp2)
         temp2 = []
     return photos    
