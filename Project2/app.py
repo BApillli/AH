@@ -100,7 +100,7 @@ def star_rating(buss):
 def images(photos):
     img = []
     for i in range(0, len(photos)):
-        photos[i]['p.id'] = "../static/photos/" + photos[i]['p.id'] + ".jpg"
+        photos[i]['p.id'] = "../static/photos/_" + photos[i]['p.id'] + ".jpg"
         img.append(photos[i]['p.id'])
     return img  
 
@@ -110,6 +110,29 @@ def get_captions(photos):
     for i in range(0, len(photos)):
         cap.append(photos[i]['p.caption'])
     return cap    
+
+''' gets latitude and longitude for map (2d array) '''
+def get_location(restaurants):
+    location = []
+    temp = []
+    for i in range(0, len(restaurants)):
+        temp.append(restaurants[i]['latitude'])
+        temp.append(restaurants[i]['longitude'])
+        location.append(temp)
+        temp=[]
+    return location    
+
+''' gets photos for list of restaurants '''
+def get_extra_photos(restaurants):
+    photos = []
+    temp2 = []
+    for i in range(0, len(restaurants)):
+        temp = main.get_photos(restaurants[i]['id'])
+        for j in range (0, len(temp)):
+            temp2.append("../static/photos/_" + temp[j]['p.id'] + ".jpg")    
+        photos.append(temp2)
+        temp2 = []
+    return photos    
 
 if __name__ == '__main__':
     app.run(debug=True)
