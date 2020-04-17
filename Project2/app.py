@@ -7,10 +7,6 @@ from datetime import datetime
 import csv
 import random
 
-api_key = 'ih6fZTuKzyCd2vnH764ngXMYkLMngq4vin3lWmKC11G-s \
-            F9tb1OqCIGAXgDgvkz4X-tQZBbnzdExYYvsy4nKvWdj2d7du1Eavqoa0kV6wt0FfiaDRBscBwhSmb10XnYx'
-headers = {'Authorization': 'Bearer %s' % api_key}
-
 app = Flask(__name__)
 app.config.from_object(Config)
 
