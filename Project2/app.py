@@ -41,7 +41,6 @@ def index():
                 if restaurants == []:
                     print("NO LIST OF RESTAURANTS")
                     restaurants = main.get_default_res(form.city.data)
-
                 trade = trading_hours(restaurants, form.day.data)
                 rating = star_rating(restaurants)
                 review = review['r.text']
@@ -49,6 +48,14 @@ def index():
                 photos = main.get_photos(name[0])
                 pictIDs = images(photos)
                 captions = get_captions(photos)
+                lenp = 0
+
+                if pictIDs == []:
+                    lenp = 1
+                    pictIDs[0] = "./static/images/IMG-4316.JPG" # replace with default image src
+                else:
+                    lenp = random.randint(1,len(pictIDs)) 
+     
                 print('SECOND PAGE')
                 return render_template('secondpage.html',
                     form=form,
@@ -56,7 +63,7 @@ def index():
                     res_names=restaurants,
                     stars = rating,
                     pictIDs=pictIDs,
-                    lenp = random.randint(1,len(pictIDs)),
+                    lenp = lenp,
 
                     trading = trade, 
                     review=review, 
