@@ -92,6 +92,7 @@ def index():
 ''' Returns the trading hours for the list of restaurants '''
 def trading_hours(buss,day):
     hours = []
+    day = day.lower()
     for i in range (0, len(buss)):
         hours.append(buss[i][day])
     return hours    
