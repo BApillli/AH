@@ -6,7 +6,6 @@ from config import Config
 from datetime import datetime
 import csv
 import random
-import requests
 import json
 
 api_key = 'ih6fZTuKzyCd2vnH764ngXMYkLMngq4vin3lWmKC11G-s \
