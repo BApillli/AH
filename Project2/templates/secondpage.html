@@ -28,6 +28,16 @@
                     </p>
                 </div>
 
+                <div>
+                    {%for i in range (0,lenp)%}
+                    <p><img src = {{pictIDs[0]}} style= "width:100px; height:100px" align = "right"></p>
+                    <div class="text-white" style='font-size: 15px' align = "right">
+                        {{captions[i]}}
+                    </div>   
+                    {%endfor%}
+                     </div>
+    
+
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
                     <div style="margin-bottom: 20px; margin-top: 20px;">
                         <h4 class ="text-white">Star Rating:</h4>
@@ -97,20 +107,22 @@
                     </div>
                 </div> 
 
+                
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
                     <h4 class = "text-white" style="margin-bottom: 20px;">Review:</h4>
                 </div>
 
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
                     <div class="chip" style="margin-bottom: 20px;">
-                        <img src="avatar.png" alt= "Person" class="avatar">             
+                        <img src="avatar.png" alt= {{user}} class="avatar">             
                     </div> 
                 </div>
 
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
                     <div class="text-white" style='font-size: 15px'>
                         {{review}}
-                    </div>
+                    </div>                
+
                 </div>
 
                 <!-- This shows what is input from the input-form -->
@@ -143,7 +155,7 @@
                 {%endfor%}
                     <ol>
                     {%for i in range (0,len)%}
-                        <li class = "boxed text-white"><p><img src = {{pictIDs[0]}} style= "width:100px; height:100px" align = "left"></p><p>{{res_names[i]['name']}}</p><p>{{trading[i]}}</p>
+                        <li class = "boxed text-white"><p>{{res_names[i]['name']}}</p><p>{{trading[i]}}</p>
                             {% if stars[i] == 1  %}
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star"></span>

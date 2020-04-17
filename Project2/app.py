@@ -52,6 +52,7 @@ def index():
                 return render_template('secondpage.html',
                     form=form,
                     len = len(restaurants),
+                    lenp = len(pictIDs)
                     res_names=restaurants,
                     stars = rating,
                     pictIDs=pictIDs,
