@@ -5,6 +5,7 @@ from flask import make_response, request
 from config import Config
 from datetime import datetime
 import csv
+import random
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -52,10 +53,11 @@ def index():
                 return render_template('secondpage.html',
                     form=form,
                     len = len(restaurants),
-                    lenp = len(pictIDs)
                     res_names=restaurants,
                     stars = rating,
                     pictIDs=pictIDs,
+                    lenp = random.randint(1,len(pictIDs))
+
                     trading = trade, 
                     review=review, 
                     best_res=name[1], 
