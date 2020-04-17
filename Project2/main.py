@@ -28,6 +28,8 @@ def best_business(city, day, time, cuisine):
             business.append(store[i]['m']['name'])
             business.append(store[i]['m']['address'])
             business.append(store[i]['m']['stars'])
+            business.append(store[i]['m']['latitude'])
+            business.append(store[i]['m']['longitude'])
             break
     return business
 
