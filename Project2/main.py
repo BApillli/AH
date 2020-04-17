@@ -13,10 +13,8 @@ def main():
     #print(temp)
     print(get_top_five("AY_cjY1bRAD-I_K11dYvOA", "Scottsdale", "Fast Food", "Monday", "14:00"))
     #businesses = get_buss("Champlain", "Burgers")
-    
     #get_hours("Sunday", "McDonald's")
     #print()
-    #print(most_useful("McDonald's"))
     # you can get stars, location, etc like this:
     # star = cat_buss(store, 2)
     
@@ -48,7 +46,7 @@ def all_info(city, day, time, cuisine):
     print(" ----- business name -----")
     print(business[1])  
     print(" ----- review -------------")
-    review = most_useful(str(business[1]))
+    review = most_useful(str(business[0]))
     print(review)
     user = review['m.id']
     print("--------- user ---------")
@@ -99,13 +97,13 @@ def get_buss(city, cruisine):
     return store
 
 #returns the user and their review -- I MADE CHANGES HERE AS WELL
-def most_useful(buss_name):
+def most_useful(buss_id):
     #is there a dynamic way to check the last two years.. stay tuned
-    store = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE r.date>'2017-12-31' AND n.name=\""+buss_name+"\" RETURN r.useful ORDER BY r.useful DESC, r.date DESC").data()
+    store = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE r.date>'2017-12-31' AND n.id=\""+buss_id+"\" RETURN r.useful ORDER BY r.useful DESC, r.date DESC").data()
     #no reviews in the past two years- just use the 'recent' one
     two_years = 0
     if (len(store)==0) :
-        store = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE n.name=\""+buss_name+"\" RETURN r.useful ORDER BY r.useful DESC, r.date DESC").data()    
+        store = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE n.id=\""+buss_id+"\" RETURN r.useful ORDER BY r.useful DESC, r.date DESC").data()    
         two_years = 1
         #there are cases when a business doesn't have reviews
         if (len(store)==0):
@@ -127,11 +125,16 @@ def most_useful(buss_name):
     #it is sorted by date so the more recent one is first anyway.. resolving duplicates. need to test extensively
 
     if two_years == 0:
-        r_review = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE r.date>'2017-12-31' AND n.name=\""+buss_name+"\" RETURN m.name, r.text, r.stars, m.id ORDER BY r.useful DESC, r.date DESC").data()
+        r_review = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE r.date>'2017-12-31' AND n.id=\""+buss_id+"\" RETURN m.name, r.text, r.stars, m.id ORDER BY r.useful DESC, r.date DESC").data()
     else:
-        r_review = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE n.name=\""+buss_name+"\" RETURN m.name, r.text, m.id ORDER BY r.useful DESC, r.date DESC").data()  
+        r_review = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE n.id=\""+buss_id+"\" RETURN m.name, r.text, m.id ORDER BY r.useful DESC, r.date DESC").data()  
     
     return r_review[i]
+
+def review_count(business_id):
+    count = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE n.id=\""+business_id+"\" RETURN count(*) as count").data()
+
+    return count
 
 def get_photos(business_id):
     # still need to do condition where there are no photos
