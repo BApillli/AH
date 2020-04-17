@@ -144,7 +144,7 @@ def get_extra_photos(restaurants):
     for i in range(0, len(restaurants)):
         temp = main.get_photos(restaurants[i]['id'])
         for j in range (0, len(temp)):
-            temp2.append("https://s3-media2.fl.yelpcdn.com/bphoto/" + temp[i]['p.id'] + "/o.jpg")    
+            temp2.append("https://s3-media2.fl.yelpcdn.com/bphoto/" + temp[j]['p.id'] + "/o.jpg")    
         photos.append(temp2)
         temp2 = []
     return photos    
