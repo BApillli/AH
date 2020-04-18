@@ -4,7 +4,7 @@ import json
 import datetime
 import re
 
-graph = Graph("bolt://156.155.137.75:8000", auth=("neo4j", "yelpme"))
+graph = Graph("bolt://127.0.0.1:8000", auth=("neo4j", "yelpme"))
 
 def main():
     store = graph.run("MATCH (n:Business) RETURN n").data()
@@ -26,7 +26,7 @@ def best_business(city, day, time, cuisine):
             # stores top business id and name
             business.append(store[i]['m']['id'])
             business.append(store[i]['m']['name'])
-            business.append(store[i]['m']['address'])
+            business.append(store[i]['m']['address'] + ", " + store[i]['m']['city'] + ", " + store[i]['m']['state'])
             business.append(store[i]['m']['stars'])
             business.append(store[i]['m']['latitude'])
             business.append(store[i]['m']['longitude'])
