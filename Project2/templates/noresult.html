@@ -1,20 +1,31 @@
 {% include 'base.html' %}
 
-
 <div class='container-fluid section' id='Output'>
-    <!--div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1" style='padding: 0; margin: 0;'></div-->
-    <!--div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10" style='padding: 0; margin: 0;'></div-->
         
         <div class="parallax-container par">
-
             <div class='divImg text-center'>
+                <p>
+                    <div class="centered text-white">
+                            {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                            <ul>
+                                {% for message in messages %}
+                                <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            {% endwith %}
+                    </div>
+                </p>
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
                         <div>
                             <h1 class="text-center text-white heading" style="margin-bottom: 25px; font-family: Permanent Marker;">{{title}}</h1>
                         </div>
                     </div>
-                    
+                    <br>
+                    <!--this part caters for the no review part-->
+                    {% if pg == 1 %}
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style='padding: 0; margin: 0;'>
                         <div>
                             <h2 class='text-white'>{{best_res}}</h2>
@@ -24,10 +35,6 @@
                         <p style='width: 100%; justify-content: right;'>
                             <address class="text-white font-size : 10">
                                 {{address}}
-                            <!-- 13 Ryneveld St,<br>
-                                Stellenbosch,<br>
-                                Cape Town<br>
-                                7600 --->
                             </address>
                         </p>
                     </div>
@@ -36,33 +43,87 @@
                         <div style="margin-bottom: 20px; margin-top: 20px;">
                             <h4 class ="text-white">Star Rating:</h4>
                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-half-full checked"></span>
-                            <span class="fa fa-star"></span>
+                            <div>
+                                {% if rating == 1  %}
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                {% elif rating == 1.5 %}
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                {% elif rating == 2 %}
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                {% elif rating == 2.5 %}
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                {%elif rating == 3 %}
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                {%elif rating == 3.5 %}
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                {%elif rating == 4 %}
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                {%elif rating == 4.5 %}
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                {%elif rating == 5 %}
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked "></span>
+                                {% endif %}
+                            </div>
                         </div>
-                    </div> 
-
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
-                        <h4 class = "text-white" style="margin-bottom: 20px;">Review:</h4>
                     </div>
+                    <br>
 
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
-                        <div class="chip" style="margin-bottom: 20px;">
-                            <img src="avatar.png" alt="Person" class="avatar">             
-                        </div> 
-                    </div>
-
-                    <!--div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
-                        <div class="text-white" style='font-size: 15px'>
-                            {{review}}
-                        </div>
-                    </div-->
-
-                    <!-- This shows what is input from the input-form -->
+                    {% elif pg == 2%}
                     <p>
-                        <div class="boxed text-white">
+                        <div class="col-1 col-sm-1 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'></div>
+                        <div class="col-10 col-sm-10 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'>
+                            <div style="text-align: center; width: 100%;">
+                                <!--Made the Find my taste button a link to the input-form -->     
+                                    <a href="firstpage.html#input-form">
+                                    <button class='button'>Find Another Craving :/</button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-1 col-sm-1 col-md-4 col-lg-4 col-xl-4" style='padding: 0; margin: 0;'></div>
+                    </p>
+                    <br>
+                    {% endif %}
+
+                    <!--p>
+                        <div class="centered text-white">
                                 {% with messages = get_flashed_messages() %}
                                 {% if messages %}
                                 <ul>
@@ -73,14 +134,19 @@
                                 {% endif %}
                                 {% endwith %}
                         </div>
-                    </p>
+                    </p-->
                 </div>
             </div>
 
+            {% if pg == 1 %}
+            <div class="parallax">
+                <img src="../static/images/noreview.jpg" style="width: 100%;">
+            </div>
+            {% elif pg == 2 %}
             <div class="parallax">
                 <img src="../static/images/open_22.jpg" style="width: 100%;">
             </div>
+            {% endif %}
 
         </div>
-
 </div>
