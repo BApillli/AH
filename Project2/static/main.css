@@ -164,6 +164,7 @@ option, select {
     color: white;
     font-family: Quicksand;
     font-size: 20px;
+    font-weight: bold;
 }
 .checked {
     color: orange;
