@@ -4,7 +4,7 @@ import json
 import datetime
 import re
 
-graph = Graph("bolt://127.0.0.1:8000", auth=("neo4j", "yelpme"))
+graph = Graph("bolt://35.224.32.106:8000", auth=("neo4j", "yelpme"))
 
 def main():
     store = graph.run("MATCH (n:Business) RETURN n").data()

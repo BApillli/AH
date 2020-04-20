@@ -1,7 +1,7 @@
 html {
     scroll-behavior: smooth;
 }
-
+ 
 body {
     background-color: black;
     font-family: Quicksand;
@@ -21,6 +21,7 @@ body {
 }
 
 #Output {
+    height: 100vh;
     min-height: 1000px;
 }
 
