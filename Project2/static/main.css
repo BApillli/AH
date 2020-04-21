@@ -20,11 +20,6 @@ body {
     margin: 0;
 }
 
-/*#Output {
-    height: 100vh;
-    min-height: 1000px;
-}*/
-
 .centered {
     position: absolute;
     top: 50%;
@@ -215,3 +210,18 @@ option, select {
 .second {
     width: 100%;
 }
+
+/*
+.secondTop{
+    background-image: ;
+    background-size: ;
+    background-repeat: ;
+}
+
+.secondBottom {
+    background-image: ;
+    background-size: ;
+    background-repeat: ;
+}
+
+*/
