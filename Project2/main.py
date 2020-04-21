@@ -9,10 +9,11 @@ graph = Graph("bolt://35.224.32.106:8000", auth=("neo4j", "yelpme"))
 
 def main():
     store = graph.run("MATCH (n:Business) RETURN n").data()
+	
 
     #temp = is_open("Sunday", "16:30" , "LbM7p-cI0dUCkaUzOyFMTw")
     #print(temp)
-    #print(most_useful("LbM7p-cI0dUCkaUzOyFMTw"))
+    print(get_buss("Champlain", "Burgers"))
     #print(get_top_five("AY_cjY1bRAD-I_K11dYvOA", "Scottsdale", "Fast Food", "Monday", "14:00"))
     #businesses = get_buss("Champlain", "Burgers")
     #get_hours("Sunday", "McDonald's")
@@ -94,9 +95,8 @@ def is_open(day, time, id):
         else:
             return False
 
-#return the list of business ordered by stars
+#return the list of business ordered by stars and ties broken by review count
 def get_buss(city, cruisine):
-    #need to quadrable check
     store = graph.run("MATCH (m:Business)-[:IN_CATEGORY]->(n:Category) WHERE m.city=\""+city+"\" AND n.id=\""+cruisine+"\" RETURN m,n ORDER BY m.stars DESC, m.review_count DESC").data()
     return store
 
