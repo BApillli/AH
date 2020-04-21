@@ -1,7 +1,7 @@
 html {
     scroll-behavior: smooth;
 }
-
+ 
 body {
     background-color: black;
     font-family: Quicksand;
@@ -21,6 +21,7 @@ body {
 }
 
 #Output {
+    height: 100vh;
     min-height: 1000px;
 }
 
@@ -164,6 +165,7 @@ option, select {
     color: white;
     font-family: Quicksand;
     font-size: 20px;
+    font-weight: bold;
 }
 .checked {
     color: orange;
@@ -207,3 +209,4 @@ option, select {
   #input-form {
       min-height: 550px;
   }
+

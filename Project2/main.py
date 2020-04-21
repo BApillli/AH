@@ -4,14 +4,16 @@ import json
 import datetime
 import re
 
-graph = Graph("bolt://127.0.0.1:8000", auth=("neo4j", "yelpme"))
+#graph = Graph("bolt://127.0.0.1:8000", auth=("neo4j", "yelpme"))
+graph = Graph("bolt://35.224.32.106:8000", auth=("neo4j", "yelpme"))
 
 def main():
     store = graph.run("MATCH (n:Business) RETURN n").data()
 
     #temp = is_open("Sunday", "16:30" , "LbM7p-cI0dUCkaUzOyFMTw")
     #print(temp)
-    print(get_top_five("AY_cjY1bRAD-I_K11dYvOA", "Scottsdale", "Fast Food", "Monday", "14:00"))
+    #print(most_useful("LbM7p-cI0dUCkaUzOyFMTw"))
+    #print(get_top_five("AY_cjY1bRAD-I_K11dYvOA", "Scottsdale", "Fast Food", "Monday", "14:00"))
     #businesses = get_buss("Champlain", "Burgers")
     #get_hours("Sunday", "McDonald's")
     #print()
@@ -100,8 +102,10 @@ def get_buss(city, cruisine):
 
 #returns the user and their review -- I MADE CHANGES HERE AS WELL
 def most_useful(buss_id):
-    #is there a dynamic way to check the last two years.. stay tuned
-    store = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE r.date>'2017-12-31' AND n.id=\""+buss_id+"\" RETURN r.useful ORDER BY r.useful DESC, r.date DESC").data()
+    x = get_date()
+    store = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE r.date>=\""+x+"\" AND n.id=\""+buss_id+"\" RETURN r.useful ORDER BY r.useful DESC, r.date DESC").data()    
+
+    #store = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE r.date>'2017-12-31' AND n.id=\""+buss_id+"\" RETURN r.useful ORDER BY r.useful DESC, r.date DESC").data()
     #no reviews in the past two years- just use the 'recent' one
     two_years = 0
     if (len(store)==0) :
@@ -121,13 +125,11 @@ def most_useful(buss_id):
     #this would mean they all none, so start from beginning- since they're already sorted by date
     if useful is None:
         i = 0
+   
     #if we only have none values to work with it'll return the most recent review...
-    
-    #this should be okay................................................................
-    #it is sorted by date so the more recent one is first anyway.. resolving duplicates. need to test extensively
 
     if two_years == 0:
-        r_review = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE r.date>'2017-12-31' AND n.id=\""+buss_id+"\" RETURN m.name, r.text, r.stars, m.id ORDER BY r.useful DESC, r.date DESC").data()
+        r_review = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE r.date>=\""+x+"\" AND n.id=\""+buss_id+"\" RETURN m.name, r.text, r.stars, m.id ORDER BY r.useful DESC, r.date DESC").data()
     else:
         r_review = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE n.id=\""+buss_id+"\" RETURN m.name, r.text, m.id ORDER BY r.useful DESC, r.date DESC").data()  
     
@@ -135,7 +137,6 @@ def most_useful(buss_id):
 
 def review_count(business_id):
     count = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE n.id=\""+business_id+"\" RETURN count(*) as count").data()
-
     return count
 
 def get_photos(business_id):
@@ -170,6 +171,15 @@ def get_default_res(city):
         restaurants.append(store[i]['f'])
 
     return restaurants
+
+# --- UTILITY FUNCTION ---
+#returns a date two years prior 
+def get_date():
+    x = str(datetime.datetime.now())
+    z = str(int(x[0:4]) - 2)
+    y = str(x[4:10])
+    z += y
+    return z
 
 if __name__ == "__main__":
     main()

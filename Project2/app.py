@@ -74,24 +74,25 @@ def index():
                     address=address, 
                     extra_adresses=extra_addresses,
                     rating=best_buss_rating, 
-                    captions=captions
+                    captions=captions,
+                    htm="second"
                     ) 
 
             else :
-                print('THERE IS NO REVIEW')
                 # goes to the noresult when there is no review
                 address = name[2]
+                best_buss_rating = name[3]
                 print('NO REVIEWW')
-                return render_template('noresult.html', form=form, title='No Review, thus no extra recommendations :/', best_res=name[1], address=address)
+                return render_template('noresult.html', form=form, title='No Review, thus no extra recommendations :/', 
+                    pg=1, best_res=name[1], address=address, rating=best_buss_rating)
   
-
         # goes to the noresult page that will cater for the no result
         print('NO RESULTSS')
-        return render_template('noresult.html', form=form, title='No Result was found for this, want to try again?', address='', best_res='')
+        return render_template('noresult.html', form=form, title='No Result was found for this, want to try again?', pg=2)
 
     else:
         #goes to the welcome page
-        return render_template('firstpage.html', form=form)
+        return render_template('firstpage.html', form=form, htm="first")
 
 ''' Returns the trading hours for the list of restaurants '''
 def trading_hours(buss,day):
