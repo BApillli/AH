@@ -1,7 +1,7 @@
 html {
     scroll-behavior: smooth;
 }
-
+ 
 body {
     background-color: black;
     font-family: Quicksand;
@@ -18,10 +18,6 @@ body {
     height: 100vh;
     padding: 0;
     margin: 0;
-}
-
-#Output {
-    min-height: 1000px;
 }
 
 .centered {
@@ -194,7 +190,9 @@ option, select {
     border-radius: 50%;
   }
   .boxed {
-    border: 1px solid green ;
+    border: 1px solid  rgb(28, 24, 12);
+    padding: 10px;
+    border-radius: 5px;
   } 
 
   .divImg {
@@ -209,3 +207,21 @@ option, select {
       min-height: 550px;
   }
 
+.second {
+    width: 100%;
+}
+
+/*
+.secondTop{
+    background-image: ;
+    background-size: ;
+    background-repeat: ;
+}
+
+.secondBottom {
+    background-image: ;
+    background-size: ;
+    background-repeat: ;
+}
+
+*/
