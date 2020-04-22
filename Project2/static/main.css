@@ -190,7 +190,7 @@ option, select {
     border-radius: 50%;
   }
   .boxed {
-    border: 1px solid  rgb(28, 24, 12);
+    border: 2px solid  rgb(28, 24, 12);
     padding: 10px;
     border-radius: 5px;
   } 
@@ -223,17 +223,37 @@ option, select {
     background-repeat: no-repeat;
 }
 
+.second-content-div {
+    padding-left: 20px; 
+    padding-right: 20px; 
+    padding-top: 0px; 
+    padding-bottom: 0px;
+}
+
+.review-div {
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: rgb(28, 24, 12);
+}
+
+.second-label {
+    font-weight: bold;
+}
+
 /*
 .secondTop{
     background-image: ;
     background-size: ;
     background-repeat: ;
 }
-
-.secondBottom {
-    background-image: ;
-    background-size: ;
-    background-repeat: ;
-}
-
 */
+
+/*.secondBottom {
+    background-image: url('./images/p3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}*/

@@ -9,164 +9,189 @@
         <br/>
         <br/>
         <br/>
-        <br/>
-        <div class='text-center secondTop'>
+        <div class='secondTop'>
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
-                    <div>
-                        <h1 class="text-center text-white heading" style="margin-bottom: 25px; font-family: Permanent Marker;">This must be the place!</h1>
+
+                <div class='container-fluid'>
+                    <div class='row' style='width: 100%;'>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <div>
+                                <h1 class="text-white heading" style="margin-bottom: 25px; font-family: Permanent Marker;">Restaurant Recommendation</h1>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style='padding: 0; margin: 0;'>
-                    <div>
-                        <h2 class='text-white'>{{best_res}}</h2>
+                <div class='container-fluid'>
+                    <div class='row' style='width: 100%;'>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style='display: inline'>
+                            <h2 class='text-white second-label'>Name</h2>
+                            <p class='text-white'>{{best_res}}</p>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style='display: inline'>
+                            <h2 class='text-white second-label'>Address</h2>
+                            <p>
+                                <address class="text-white">
+                                    {{address}}
+                                </address>
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style='padding: 0; margin: 0;'>
-                    <p style='width: 100%; justify-content: right;'>
-                        <address class="text-white font-size : 10">
-                            {{address}}
-                        </address>
-                    </p>
-                </div>
 
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style='padding: 0; margin: auto;'>
-                    <div class='text-center' style='width:100%;'>
+                <div class='container-fluid'>
+                    <div class='row' style='width: 100%;'>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <h2 class='text-white second-label'>Food</h2>
+                        </div>
                         {%for i in range (0,lenp)%}
-                        <p><img src = "{{pictIDs[i]}}" alt='../static/images/generic.jpg' style= "width:100px; height:100px"></p>
-                        <div class="text-white" style='font-size: 15px'>
-                            {{captions[i]}}
-                        </div>  
-                        <br> 
+                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                            <p class='text-center'><img src = "{{pictIDs[i]}}" alt='../static/images/generic.jpg' style= "width:200px; height:200px; border-radius: 5px"></p>
+                            <div class="text-white text-center" style='font-size: 15px'>
+                                <p aria-placeholder='[Photo Caption]'>
+                                    {% if captions[i] != ''  %}
+                                        {{captions[i]}}
+                                    {%elif rating == 3.5 %}
+                                        [Photo Caption]
+                                    {% endif %}
+                                </p>
+                            </div> 
+                        </div> 
                         {%endfor%}
                     </div>
                 </div>
     
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
-                    <div style="margin-bottom: 20px; margin-top: 20px;">
-                        <h4 class ="text-white">Star Rating:</h4>
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                        <div>
-                            {% if rating == 1  %}
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
+                <div class='container-fluid'>
+                    <div class='row' style='width: 100%;'>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <div style="margin-bottom: 20px; margin-top: 20px;">
+                                <h2 class ="text-white second-label">Rating</h2>
+                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                <div>
+                                    {% if rating == 1  %}
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
 
-                            {% elif rating == 1.5 %}
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-half-full checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
+                                    {% elif rating == 1.5 %}
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star-half-full checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
 
-                            {% elif rating == 2 %}
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
+                                    {% elif rating == 2 %}
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
 
-                            {% elif rating == 2.5 %}
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-half-full checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
+                                    {% elif rating == 2.5 %}
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star-half-full checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
 
-                            {%elif rating == 3 %}
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
+                                    {%elif rating == 3 %}
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
 
-                            {%elif rating == 3.5 %}
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-half-full checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
+                                    {%elif rating == 3.5 %}
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star-half-full checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
 
-                            {%elif rating == 4 %}
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
+                                    {%elif rating == 4 %}
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
 
-                            {%elif rating == 4.5 %}
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-half-full checked"></span>
+                                    {%elif rating == 4.5 %}
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star-half-full checked"></span>
 
-                            {%elif rating == 5 %}
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked "></span>
+                                    {%elif rating == 5 %}
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked "></span>
 
-                            {% endif %}
-                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div> 
                     </div>
-                </div> 
-
-                
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
-                    <h4 class = "text-white" style="margin-bottom: 20px;">Review:</h4>
                 </div>
 
-                <!--div-- class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
-                    <div class="chip" style="margin-bottom: 20px;">
-                        <img src="avatar.png" alt= {{user}} class="avatar">             
-                    </div> 
-                </!--div-->
-
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style='padding: 0; margin: 0;'>
-                    <div class="text-white" style='font-size: 15px'>
-                        {{review}}
-                    </div>                
-
+                <div class='container-fluid'>
+                    <div class='row' style='width: 100%;'>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <h2 class = "text-white second-label" style="margin-bottom: 20px;">Review</h2>
+                        </div>
+                        <br/>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="text-white review-div" style='font-size: 18px;'>
+                                {{review}}
+                            </div>                
+                        </div>
+                    </div>
                 </div>
 
                 <!-- This shows what is input from the input-form -->
-                <div class="boxed text-white" style='margin:auto'>
-                        {% with messages = get_flashed_messages() %}
-                        {% if messages %}
-                        <ul>
-                            {% for message in messages %}
-                            <li>{{ message }}</li>
-                            {% endfor %}
-                        </ul>
-                        {% endif %}
-                        {% endwith %}
+                <div class='container-fluid'>
+                    <div class='row' style='width: 100%;'>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class='user-input text-white'>
+                                {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                <ul>
+                                    {% for message in messages %}
+                                    <li>{{ message }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                                {% endwith %}
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
-        <div class='container-fluid secondBottom' id='ExtraOutput' style='width: 100%;'>
+        <div class='secondBottom' id='ExtraOutput' style='width: 100%;'>
             <br/>
-            <br/>
-            <br/>
-            <br/>
-            <div class="row">
-                <!--<div class="parallax-container par">-->
-                <div class='text-center' style='margin:auto'>
-                    <div class="text-center">
-                        <!--Enter code in this div-->
+            <div class='container-fluid'>
+                <div class='row' style='width: 100%;'>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <h1 class="text-center text-white">List of restaurants </h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class='container-fluid'>
+                <div class='row' style='width: 100%;'>
                     {%for i in range (0,len)%}
-                    
-                    {%endfor%}
-                        <ol>
-                        {%for i in range (0,len)%}
-                            <li class = "boxed text-white"><p>{{res_names[i]['name']}}</p><p>{{trading[i]}}</p>
+                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3" style='margin: auto; margin-bottom: 10px'>
+                            <div class = "boxed text-white" style='width: 100%; height: 100%;'>
+                                <p>{{res_names[i]['name']}}</p>
+                                <p>{{trading[i]}}</p>
                                 {% if stars[i] == 1  %}
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star"></span>
@@ -221,12 +246,12 @@
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked "></span>
                                 {% endif %}
-                            </li>
-                        {%endfor%}
-                        </ol>
-                    </div>
+                            </div>
+                        </div>
+                    {%endfor%}
                 </div>
             </div>
+
         </div>
     </div>
     <br/>
