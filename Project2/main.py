@@ -4,8 +4,8 @@ import json
 import datetime
 import re
 
-#graph = Graph("bolt://127.0.0.1:8000", auth=("neo4j", "yelpme"))
-graph = Graph("bolt://35.224.32.106:8000", auth=("neo4j", "yelpme"))
+graph = Graph("bolt://127.0.0.1:8000", auth=("neo4j", "yelpme"))
+#graph = Graph("bolt://35.224.32.106:8000", auth=("neo4j", "yelpme"))
 
 def main():
     store = graph.run("MATCH (n:Business) RETURN n").data()
@@ -13,7 +13,7 @@ def main():
 
     #temp = is_open("Sunday", "16:30" , "LbM7p-cI0dUCkaUzOyFMTw")
     #print(temp)
-    print(get_buss("Champlain", "Burgers"))
+    #print(get_buss("Champlain", "Burgers"))
     #print(get_top_five("AY_cjY1bRAD-I_K11dYvOA", "Scottsdale", "Fast Food", "Monday", "14:00"))
     #businesses = get_buss("Champlain", "Burgers")
     #get_hours("Sunday", "McDonald's")
