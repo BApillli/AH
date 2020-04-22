@@ -263,3 +263,18 @@ option, select {
     background-position: center;
 }
 */
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    border: 3px solid #232943;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(28, 24, 12);
+    width: 5px;
+    border-radius: 5px;
+}
