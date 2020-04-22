@@ -190,10 +190,12 @@ option, select {
     border-radius: 50%;
   }
   .boxed {
-    border: 2px solid  rgb(28, 24, 12);
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
     padding: 10px;
-    border-radius: 5px;
-    background-color: rgb(64,224,208)
+    border-radius: 3px;
+    background-color: rgb(28, 24, 12);
   } 
 
   .divImg {
