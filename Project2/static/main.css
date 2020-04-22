@@ -211,6 +211,11 @@ option, select {
     width: 100%;
 }
 
+.input-section {
+    height: 100vh;
+    min-height: 1000px;
+}
+
 /*
 .secondTop{
     background-image: ;
