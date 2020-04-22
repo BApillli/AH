@@ -46,12 +46,18 @@
                         </div>
                         {%for i in range (0,lenp)%}
                         <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                            <p class='text-center'><img src = "{{pictIDs[i]}}" alt='../static/images/generic.jpg' style= "width:200px; height:200px; border-radius: 5px"></p>
+                            <p class='text-center text-white'>
+                                {% if lenp != 0  %}
+                                    <img src ="{{pictIDs[i]}}" style= "width:200px; height:200px; border-radius: 5px">
+                                {% else %}
+                                    <img src ="../static/images/IMG-4317.JPG" style= "width:200px; height:200px; border-radius: 5px">
+                                {% endif %}
+                            </p>
                             <div class="text-white text-center" style='font-size: 15px'>
                                 <p aria-placeholder='[Photo Caption]'>
                                     {% if captions[i] != ''  %}
                                         {{captions[i]}}
-                                    {%elif rating == 3.5 %}
+                                    {% else %}
                                         [Photo Caption]
                                     {% endif %}
                                 </p>
@@ -175,6 +181,7 @@
 
             </div>
         </div>
+
         <div class='secondBottom' id='ExtraOutput' style='width: 100%;'>
             <br/>
             <div class='container-fluid'>
@@ -253,6 +260,7 @@
             </div>
 
         </div>
+        
     </div>
     <br/>
 </div>
