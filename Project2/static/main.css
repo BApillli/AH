@@ -211,6 +211,18 @@ option, select {
     width: 100%;
 }
 
+.input-section {
+    height: 100vh;
+    min-height: 1000px;
+}
+
+#Intro {
+    background-image: url('../static/images/p1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 /*
 .secondTop{
     background-image: ;
