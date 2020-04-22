@@ -193,6 +193,7 @@ option, select {
     border: 2px solid  rgb(28, 24, 12);
     padding: 10px;
     border-radius: 5px;
+    background-color: rgb(64,224,208)
   } 
 
   .divImg {
