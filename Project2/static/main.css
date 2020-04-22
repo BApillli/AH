@@ -244,17 +244,22 @@ option, select {
     font-weight: bold;
 }
 
+/* Top section containing the recommended res */
 /*
-.secondTop{
-    background-image: ;
-    background-size: ;
-    background-repeat: ;
+.second-top-div{
+    background-image: url('../static/images/blackgnd.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 */
 
-/*.secondBottom {
-    background-image: url('./images/p3.jpg');
+/* Bottom section containing the extra recommendedations */
+/*
+.second-bottom-div{
+    background-image: url('../static/images/IMG-4317.JPG');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top;
-}*/
+    background-position: center;
+}
+*/
