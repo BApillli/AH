@@ -59,7 +59,7 @@ def index():
                 lenp = 0
                 if pictIDs == []:
                     lenp = 1
-                    pictIDs.append("./static/images/iu.png") # replace with default image src
+                    pictIDs.append("./static/images/generic.jpg") # replace with default image src
                 else:
                     lenp = random.randint(1,len(pictIDs)) 
      
