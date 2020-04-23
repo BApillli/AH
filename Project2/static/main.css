@@ -195,8 +195,10 @@ option, select {
     border-style: solid;
     padding: 10px;
     border-radius: 3px;
-    background-color: rgb(28, 24, 12);
-  } 
+    /*background-color: rgb(28, 24, 12);*/
+    background-color: transparent;
+  }
+
 
   .divImg {
     justify-content: center;
@@ -258,12 +260,12 @@ option, select {
 
 /* Bottom section containing the extra recommendedations */
 
-/*.second-bottom-div{
-    background-image: url('../static/images/nineteen.jpeg');
+.second-bottom-div{
+    background-image: url('../static/images/lights2upside.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-}*/
+    background-position: inherit;
+}
 
 
 ::-webkit-scrollbar {

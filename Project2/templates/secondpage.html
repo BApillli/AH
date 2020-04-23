@@ -141,7 +141,7 @@
                         </div>
                         <br/>
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            <div class="text-white review-div" style='font-size: 18px;'>
+                            <div class="text-white review-div" style='font-size: 18px; background-color: transparent;'>
                                 {{review}}
                             </div>                
                         </div>
@@ -181,18 +181,26 @@
                 </div>
             </div>
 
+            {% if empty == 1%}
+            <div class="container-fluid">
+                    <h3 class="text-white second-label">There are no Extra Recommendations Sorry :/</h3>
+            </div>
+
+            {% else %}
             <div class='container-fluid'>
                 <div class='row' style='width: 100%;'>
                     {%for i in range (0,len)%}
                         <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3" style='margin: auto; margin-bottom: 10px'>
-                            <div class = "text-white boxed " style='width: 100%; height: 300px; overflow-y: scroll;'>
-                                <p style="margin-bottom: 15px; font-family: Creepster Caps;">{{res_names[i]['name']}}</p>
-                                <h5 class='text-white second-label' >Trading Hours:</h5>
+                            <div class = "boxed " style='width: 100%; height: 300px; overflow-y: scroll'>
+                                <p class="text-white" style="margin-bottom: 15px; font-family: Creepster Caps;">
+                                    {{res_names[i]['name']}}
+                                </p>
+                                <h5 class='text-white second-label'>Trading Hours:</h5>
 
-                                <p >{{trading[i]}}</p>
+                                <p class="text-white">{{trading[i]}}</p>
                                 <h5 class='text-white second-label'>Address:</h5>
 
-                                <p><address class="text-white" align= "left">
+                                <p><address class="text-white"> <!--align= "left"-->
                                     {{extra_adresses[i]}}
                                 </address></p>
                                 <h5 class='text-white second-label'>Rating:</h5>
@@ -256,6 +264,7 @@
                     {%endfor%}
                 </div>
             </div>
+            {% endif %}
 
         </div>
     </div>
