@@ -4,7 +4,6 @@ import json
 import datetime
 import re
 
-#graph = Graph("bolt://127.0.0.1:8000", auth=("neo4j", "yelpme"))
 graph = Graph("bolt://35.224.32.106:8000", auth=("neo4j", "yelpme"))
 
 def best_business(city, day, time, cuisine):
@@ -20,7 +19,6 @@ def best_business(city, day, time, cuisine):
     business = []
     for i in range(0, len(store)):
         if is_open(day, time, store[i]['m']['id']):
-            # stores top business id and name
             business.append(store[i]['m']['id'])
             business.append(store[i]['m']['name'])
             business.append(store[i]['m']['address'] + ", " + store[i]['m']['city'] + ", " + store[i]['m']['state'])
@@ -108,7 +106,6 @@ def get_buss(city, cruisine):
     store = graph.run("MATCH (m:Business)-[:IN_CATEGORY]->(n:Category) WHERE m.city=\""+city+"\" AND n.id=\""+cruisine+"\" RETURN m,n ORDER BY m.stars DESC, m.review_count DESC").data()
     return store
 
-#returns the user and their review -- I MADE CHANGES HERE AS WELL
 def most_useful(buss_id):
     """Returns the user with the most useful review as well as the review.
 
@@ -118,7 +115,6 @@ def most_useful(buss_id):
     x = get_date()
     store = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE r.date>=\""+x+"\" AND n.id=\""+buss_id+"\" RETURN r.useful ORDER BY r.useful DESC, r.date DESC").data()    
 
-    #store = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE r.date>'2017-12-31' AND n.id=\""+buss_id+"\" RETURN r.useful ORDER BY r.useful DESC, r.date DESC").data()
     #no reviews in the past two years- just use the 'recent' one
     two_years = 0
     if (len(store)==0) :
@@ -213,8 +209,6 @@ def get_default_res(city, id):
 
     return restaurants
 
-# --- UTILITY FUNCTION ---
-#returns a date two years prior 
 def get_date():
     """Returns a date two years prior to the current date"""
     x = str(datetime.datetime.now())
