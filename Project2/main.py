@@ -128,10 +128,11 @@ def most_useful(buss_id):
     useful = store[0]['r.useful']
     #skipping those nones...............................................................
     while (useful is None) :
-        useful = store[i]['r.useful']
         i += 1
         if (i == len(store)-1):
             break
+        useful = store[i]['r.useful']
+    
     #this would mean they all none, so start from beginning- since they're already sorted by date
     if useful is None:
         i = 0
@@ -142,7 +143,7 @@ def most_useful(buss_id):
         r_review = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE r.date>=\""+x+"\" AND n.id=\""+buss_id+"\" RETURN m.name, r.text, r.stars, m.id ORDER BY r.useful DESC, r.date DESC").data()
     else:
         r_review = graph.run("MATCH (m:User)-[r:REVIEWS]->(n:Business) WHERE n.id=\""+buss_id+"\" RETURN m.name, r.text, m.id ORDER BY r.useful DESC, r.date DESC").data()  
-    
+
     return r_review[i]
 
 def review_count(business_id):
@@ -226,6 +227,3 @@ def is_photo_valid(photos):
             new_photos.append(photos[i])
 
     return new_photos    
-
-if __name__ == "__main__":
-    main()
