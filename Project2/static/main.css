@@ -247,24 +247,24 @@ option, select {
 }
 
 /* Top section containing the recommended res */
-/*
+
 .second-top-div{
     background-image: url('../static/images/blackgnd.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
-*/
+
 
 /* Bottom section containing the extra recommendedations */
-/*
+
 .second-bottom-div{
     background-image: url('../static/images/IMG-4317.JPG');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
-*/
+
 
 ::-webkit-scrollbar {
     width: 2px;
