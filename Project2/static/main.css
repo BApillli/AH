@@ -249,7 +249,7 @@ option, select {
 /* Top section containing the recommended res */
 
 .second-top-div{
-    background: url('../static/images/five.jpeg');
+    background-image: url('../static/images/lights2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -258,12 +258,12 @@ option, select {
 
 /* Bottom section containing the extra recommendedations */
 
-.second-bottom-div{
-    background: url('../static/images/nineteen.jpeg');
+/*.second-bottom-div{
+    background-image: url('../static/images/nineteen.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-}
+}*/
 
 
 ::-webkit-scrollbar {

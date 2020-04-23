@@ -2,7 +2,6 @@
 {id:Afghan}
 {id:African}
 {id:Arabian}
-{id:Arcades}
 {id:Argentine}
 {id:Armenian}
 {id:Asian Fusion}
@@ -36,17 +35,12 @@
 {id:Cantonese}
 {id:Caribbean}
 {id:Champagne Bars}
-{id:Cheese Shops}
-{id:Cheese Tasting Classes}
 {id:Cheesesteaks}
-{id:Chicken Shop}
 {id:Chicken Wings}
 {id:Chinese}
 {id:Chocolatiers & Shops}
 {id:Churros}
 {id:Cideries}
-{id:Cigar Bars}
-{id:Clowns}
 {id:Cocktail Bars}
 {id:Coffee & Tea}
 {id:Coffee Roasteries}
@@ -69,24 +63,15 @@
 {id:Empanadas}
 {id:Ethiopian}
 {id:Ethnic Food}
-{id:Ethnic Grocery}
 {id:Falafel}
-{id:Farmers Market}
 {id:Fast Food}
 {id:Filipino}
 {id:Fish & Chips}
 {id:Fondue}
 {id:Food}
-{id:Food Banks}
-{id:Food Court}
-{id:Food Delivery Services}
-{id:Food Stands}
-{id:Food Tours}
 {id:Food Trucks}
-{id:Formal Wear}
 {id:French}
 {id:Fruits & Veggies}
-{id:Gardeners}
 {id:Gastropubs}
 {id:Gelato}
 {id:German}
@@ -97,8 +82,6 @@
 {id:Herbs & Spices}
 {id:Himalayan/Nepalese}
 {id:Honduran}
-{id:Hookah Bars}
-{id:Hostels}
 {id:Hot Dogs}
 {id:Hot Pot}
 {id:Hungarian}
@@ -111,81 +94,46 @@
 {id:Italian}
 {id:Izakaya}
 {id:Japanese}
-{id:Jewelry}
 {id:Juice Bars & Smoothies}
-{id:Karaoke}
 {id:Kebab}
 {id:Korean}
 {id:Kosher}
 {id:Laotian}
-{id:Laser Tag}
 {id:Latin American}
 {id:Lebanese}
 {id:Live/Raw Food}
 {id:Local Flavor}
-{id:Lounges}
 {id:Macarons}
 {id:Mags}
 {id:Malaysian}
-{id:Marinas}
-{id:Marketing}
-{id:Martial Arts}
-{id:Meat Shops}
 {id:Mediterranean}
-{id:Men's Clothing}
 {id:Mexican}
 {id:Middle Eastern}
 {id:Modern European}
 {id:Mongolian}
 {id:Moroccan}
-{id:Museums}
-{id:Music & Video}
-{id:Music Venues}
-{id:Musicians}
 {id:New Mexican Cuisine}
-{id:Nightlife}
 {id:Noodles}
-{id:Nurseries & Gardening}
-{id:Nutritionists}
 {id:Olive Oil}
-{id:Organic Stores}
-{id:Outlet Stores}
 {id:Pakistani}
 {id:Pan Asian}
-{id:Pasta Shops}
 {id:Patisserie/Cake Shop}
 {id:Persian/Iranian}
 {id:Peruvian}
 {id:Piano Bars}
 {id:Pick Your Own Farms}
 {id:Pizza}
-{id:Playgrounds}
 {id:Poke}
 {id:Polish}
-{id:Pool & Billiards}
-{id:Pool Halls}
 {id:Pop-Up Restaurants}
 {id:Popcorn Shops}
 {id:Portuguese}
 {id:Poutineries}
-{id:Pressure Washers}
 {id:Pretzels}
-{id:Printing Services}
-{id:Professional Services}
-{id:Public Markets}
-{id:Public Services & Government}
 {id:Pubs}
 {id:Puerto Rican}
 {id:Pumpkin Patches}
 {id:Ramen}
-{id:Real Estate}
-{id:Real Estate Agents}
-{id:Recreation Centers}
-{id:Reflexology}
-{id:Resorts}
-{id:Restaurant Supplies}
-{id:Restaurants}
-{id:Roofing}
 {id:Russian}
 {id:Salad}
 {id:Salvadoran}
@@ -198,42 +146,31 @@
 {id:Sicilian}
 {id:Siding}
 {id:Singaporean}
-{id:Skating Rinks}
-{id:Ski Resorts}
-{id:Skin Care}
 {id:Slovakian}
 {id:Smokehouse}
-{id:Soccer}
-{id:Social Clubs}
 {id:Soul Food}
 {id:Soup}
 {id:Southern}
 {id:Spanish}
 {id:Speakeasies}
 {id:Specialty Food}
-{id:Stadiums & Arenas}
 {id:Steakhouses}
 {id:Street Vendors}
 {id:Supper Clubs}
 {id:Sushi Bars}
 {id:Syrian}
 {id:Szechuan}
-{id:Tabletop Games}
 {id:Tacos}
 {id:Tai Chi}
 {id:Taiwanese}
-{id:Tanning}
 {id:Tapas Bars}
 {id:Tapas/Small Plates}
 {id:Tasting Classes}
-{id:Taxis}
-{id:Tea Rooms}
 {id:Teppanyaki}
 {id:Tex-Mex}
 {id:Thai}
 {id:Themed Cafes}
 {id:Tiki Bars}
-{id:Tobacco Shops}
 {id:Trinidadian}
 {id:Turkish}
 {id:Tuscan}
@@ -247,7 +184,6 @@
 {id:Whiskey Bars}
 {id:Wine & Spirits}
 {id:Wine Bars}
-{id:Wine Tasting Classes}
 {id:Wine Tasting Room}
 {id:Wine Tours}
 {id:Wineries}
