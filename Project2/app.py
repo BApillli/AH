@@ -19,7 +19,6 @@ trading = ["24hrs","16:30 - 22:00","17:00 - 02:00"]
 review = "blah blah blah"
 name = []
 loc = []
-empty = 0
 
 @app.route('/')
 @app.route('/index', methods = ['GET', 'POST'])
@@ -44,6 +43,8 @@ def index():
                     print("NO LIST OF RESTAURANTS")
                     restaurants = main.get_default_res(form.city.data, name[0])
                     empty = 1
+                else:
+                    empty = 0    
                 trade = trading_hours(restaurants, form.day.data)
                 rating = star_rating(restaurants)
                 review = review['r.text']
