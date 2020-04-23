@@ -65,22 +65,23 @@ def index():
      
                 print('SECOND PAGE')
                 return render_template('secondpage.html',
-                    form=form,
-                    len = len(restaurants),
-                    res_names=restaurants,
-                    empty=empty,
-                    stars = rating,
-                    pictIDs=pictIDs,
+                    form=form, 
+                    len = len(restaurants), #number of extra restaurants
+                    res_names=restaurants, # list of restaurants
+                    empty=empty, 
+                    stars = rating, # rating of best restaurant
+                    pictIDs=pictIDs, # pictures of best restaurant
                     lenp = lenp,
-                    locations = locations,
-                    trading = trade, 
-                    review=review, 
-                    best_res=name[1], 
-                    address=address, 
-                    extra_adresses=extra_addresses,
-                    extra_photos=extra_photos,
-                    rating=best_buss_rating, 
-                    captions=captions,
+                    locations = locations, # location of best restaurant
+                    trading_hours = name[4], # trading hours of best restaurant
+                    trading = trade, # trading hours of list of restaurants
+                    review=review, # review of best restaurant
+                    best_res=name[1], # name of best restaurant
+                    address=address, # address of best restaurant
+                    extra_adresses=extra_addresses, # addresses of list of restaurants
+                    extra_photos=extra_photos, # photos of list of restaurants
+                    rating=best_buss_rating, # rating of list of restaurants
+                    captions=captions, # captions of photos for best restaurant
                     htm="second"
                     ) 
 

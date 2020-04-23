@@ -18,12 +18,15 @@ def best_business(city, day, time, cuisine):
     """    
     store = get_buss(city, cuisine)
     business = []
+    day = day.lower()
+    print(day)
     for i in range(0, len(store)):
         if is_open(day, time, store[i]['m']['id']):
             business.append(store[i]['m']['id'])
             business.append(store[i]['m']['name'])
             business.append(store[i]['m']['address'] + ", " + store[i]['m']['city'] + ", " + store[i]['m']['state'])
             business.append(store[i]['m']['stars'])
+            business.append(store[i]['m'][day])
             business.append(store[i]['m']['latitude'])
             business.append(store[i]['m']['longitude'])
             break
@@ -228,5 +231,5 @@ def is_photo_valid(photos):
         response = requests.get(photos[i])
         if response.status_code == 200:
             new_photos.append(photos[i])
-    
+
     return new_photos    
