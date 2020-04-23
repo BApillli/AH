@@ -220,10 +220,13 @@ def get_date():
     return z
 
 def is_photo_valid(photos):
+    """Iterates through list of photo urls and checks if the url is valid.
+       All invalid urls are removed from the list and the final list is returned
+    """   
     new_photos = []
     for i in range(0, len(photos)):
         response = requests.get(photos[i])
         if response.status_code == 200:
             new_photos.append(photos[i])
-
+    
     return new_photos    

@@ -51,6 +51,7 @@ def index():
                 extra_addresses = get_addresses(restaurants)
                 photos = main.get_photos(name[0])
                 pictIDs = main.is_photo_valid(images(photos, name[0]))
+                extra_photos = get_extra_photos(restaurants)
                 captions = get_captions(photos)
                 #latitude and longitude
                 locations = get_location(restaurants)
@@ -76,6 +77,7 @@ def index():
                     best_res=name[1], 
                     address=address, 
                     extra_adresses=extra_addresses,
+                    extra_photos=extra_photos,
                     rating=best_buss_rating, 
                     captions=captions,
                     htm="second"
@@ -149,6 +151,7 @@ def get_extra_photos(restaurants):
         for j in range (0, len(temp)):
             temp2.append("https://s3-media2.fl.yelpcdn.com/bphoto/" + 
             temp[j]['p.id'] + "/o.jpg")    
+        temp2 = main.is_photo_valid(temp2)    
         photos.append(temp2)
         temp2 = []
     return photos    
