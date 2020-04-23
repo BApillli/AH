@@ -19,8 +19,6 @@ class ReadList():
                 for city_name in row:
                     city_list.append(city_name)
             line = line + 1
-        #x = ["city"] * len(city_list)
-        #cit = list(zip(x,city_list))
         cit = list(zip(city_list,city_list))
 
         return cit
@@ -40,8 +38,6 @@ class ReadList():
                     s = ' '.join(k[1:])
                     cus_list.append(s)
             line = line + 1
-        #x = ["cuisine"] * len(cus_list)
-        #cus = list(zip(x, cus_list))
         cus = list(zip(cus_list, cus_list))
 
         return cus
