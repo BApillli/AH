@@ -48,14 +48,14 @@ def index():
                 address = name[2]
                 extra_addresses = get_addresses(restaurants)
                 photos = main.get_photos(name[0])
-                pictIDs = images(photos, name[0])
+                pictIDs = main.is_photo_valid(images(photos, name[0]))
                 captions = get_captions(photos)
                 #latitude and longitude
                 locations = get_location(restaurants)
                 lenp = 0
                 if pictIDs == []:
                     lenp = 1
-                    pictIDs.append("./static/images/IMG-4316.JPG") # replace with default image src
+                    pictIDs.append("./static/images/iu.png") # replace with default image src
                 else:
                     lenp = random.randint(1,len(pictIDs)) 
      

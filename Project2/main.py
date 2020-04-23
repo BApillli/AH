@@ -3,6 +3,7 @@ from py2neo import Database
 import json
 import datetime
 import re
+import requests
 
 graph = Graph("bolt://35.224.32.106:8000", auth=("neo4j", "yelpme"))
 
@@ -216,6 +217,15 @@ def get_date():
     y = str(x[4:10])
     z += y
     return z
+
+def is_photo_valid(photos):
+    new_photos = []
+    for i in range(0, len(photos)):
+        response = requests.get(photos[i])
+        if response.status_code == 200:
+            new_photos.append(photos[i])
+
+    return new_photos    
 
 if __name__ == "__main__":
     main()
