@@ -42,6 +42,9 @@ def index():
                 if restaurants == []:
                     print("NO LIST OF RESTAURANTS")
                     restaurants = main.get_default_res(form.city.data, name[0])
+                    empty = 1
+                else:
+                    empty = 0    
                 trade = trading_hours(restaurants, form.day.data)
                 rating = star_rating(restaurants)
                 review = review['r.text']
@@ -49,32 +52,36 @@ def index():
                 extra_addresses = get_addresses(restaurants)
                 photos = main.get_photos(name[0])
                 pictIDs = main.is_photo_valid(images(photos, name[0]))
+                extra_photos = get_extra_photos(restaurants)
                 captions = get_captions(photos)
                 #latitude and longitude
                 locations = get_location(restaurants)
                 lenp = 0
                 if pictIDs == []:
                     lenp = 1
-                    pictIDs.append("./static/images/iu.png") # replace with default image src
+                    pictIDs.append("./static/images/generic.jpg") # replace with default image src
                 else:
                     lenp = random.randint(1,len(pictIDs)) 
      
                 print('SECOND PAGE')
                 return render_template('secondpage.html',
-                    form=form,
-                    len = len(restaurants),
-                    res_names=restaurants,
-                    stars = rating,
-                    pictIDs=pictIDs,
+                    form=form, 
+                    len = len(restaurants), #number of extra restaurants
+                    res_names=restaurants, # list of restaurants
+                    empty=empty, 
+                    stars = rating, # rating of best restaurant
+                    pictIDs=pictIDs, # pictures of best restaurant
                     lenp = lenp,
-                    locations = locations,
-                    trading = trade, 
-                    review=review, 
-                    best_res=name[1], 
-                    address=address, 
-                    extra_adresses=extra_addresses,
-                    rating=best_buss_rating, 
-                    captions=captions,
+                    locations = locations, # location of best restaurant
+                    trading_hours = name[4], # trading hours of best restaurant
+                    trading = trade, # trading hours of list of restaurants
+                    review=review, # review of best restaurant
+                    best_res=name[1], # name of best restaurant
+                    address=address, # address of best restaurant
+                    extra_adresses=extra_addresses, # addresses of list of restaurants
+                    extra_photos=extra_photos, # photos of list of restaurants
+                    rating=best_buss_rating, # rating of list of restaurants
+                    captions=captions, # captions of photos for best restaurant
                     htm="second"
                     ) 
 
@@ -146,6 +153,7 @@ def get_extra_photos(restaurants):
         for j in range (0, len(temp)):
             temp2.append("https://s3-media2.fl.yelpcdn.com/bphoto/" + 
             temp[j]['p.id'] + "/o.jpg")    
+        temp2 = main.is_photo_valid(temp2)    
         photos.append(temp2)
         temp2 = []
     return photos    
