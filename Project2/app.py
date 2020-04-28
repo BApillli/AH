@@ -48,6 +48,7 @@ def index():
                 trade = trading_hours(restaurants, form.day.data)
                 rating = star_rating(restaurants)
                 review = review['r.text']
+                reviewer = review['m.name']
                 address = name[2]
                 extra_addresses = get_addresses(restaurants)
                 photos = main.get_photos(name[0])
@@ -76,6 +77,7 @@ def index():
                     trading_hours = name[4], # trading hours of best restaurant
                     trading = trade, # trading hours of list of restaurants
                     review=review, # review of best restaurant
+                    reviewer=reviewer, #name of reviewer
                     best_res=name[1], # name of best restaurant
                     address=address, # address of best restaurant
                     extra_adresses=extra_addresses, # addresses of list of restaurants
