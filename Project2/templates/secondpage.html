@@ -171,6 +171,7 @@
         </div>
         <div class='second-bottom-div' id='ExtraOutput' style='width: 100%;'>
             <br/>
+            {% if empty == 0%}
             <div class='container-fluid'>
                 <div class='row' style='width: 100%;'>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -180,13 +181,19 @@
                     </div>
                 </div>
             </div>
-
-            {% if empty == 1%}
-            <div class="container-fluid">
-                    <h3 class="text-white second-label">There are no Extra Recommendations Sorry :/</h3>
-            </div>
-
             {% else %}
+            <div class='container-fluid'>
+                <div class='row' style='width: 100%;'>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div>
+                            <h3 class="text-white heading" style="margin-bottom: 25px; font-family: Quicksand;">We couldn't find extra restaurants in the same category that you selected</h3>
+                            <h2 class="text-white heading" style="margin-bottom: 25px; font-family: Quicksand;">Have a look at our other suggestions</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+           
             <div class='container-fluid'>
                 <div class='row' style='width: 100%;'>
                     {%for i in range (0,len)%}
@@ -264,8 +271,6 @@
                     {%endfor%}
                 </div>
             </div>
-            {% endif %}
-
         </div>
     </div>
     <br/>
