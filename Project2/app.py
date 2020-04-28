@@ -10,15 +10,6 @@ import random
 app = Flask(__name__)
 app.config.from_object(Config)
 
-#making lists we'll possibly need
-
-res_names = ["WhatABurger","Girl & The Goat","Vernick Food & Drink"]
-stars = [5,4,3,3,1]
-picts = ["../static/images/IMG-4316.JPG","../static/images/IMG-4317.JPG","../static/images/IMG-4318.JPG"]
-trading = ["24hrs","16:30 - 22:00","17:00 - 02:00"]
-review = "blah blah blah"
-name = []
-loc = []
 
 @app.route('/')
 @app.route('/index', methods = ['GET', 'POST'])
@@ -84,6 +75,7 @@ def index():
                     extra_photos=extra_photos, # photos of list of restaurants
                     rating=best_buss_rating, # rating of list of restaurants
                     captions=captions, # captions of photos for best restaurant
+                    review_count=name[5],
                     htm="second"
                     ) 
 
