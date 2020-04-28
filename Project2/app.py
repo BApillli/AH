@@ -31,6 +31,7 @@ def index():
                 best_buss_rating = name[3]
                 restaurants = main.get_top_five(user, form.city.data, form.cuisine.data, form.day.data, form.time.data.strftime("%H:%M"))
                 if restaurants == []:
+                    print(len(restaurants))
                     print("NO LIST OF RESTAURANTS")
                     restaurants = main.get_default_res(form.city.data, name[0])
                     empty = 1
