@@ -11,9 +11,9 @@ class SimpleWidgetTestCase(unittest.TestCase):
         self.widget.dispose()
 
 class TestMain(unittest.TestCase):
-    ''' Test function to verify project requirements for best restaurant
+    """ Test function to verify project requirements for best restaurant
         returned is correct
-    '''
+    """
 
     def test_get_buss(self):
         hold = get_buss("Scottsdale", "Hot Dogs")
@@ -55,9 +55,9 @@ class TestMain(unittest.TestCase):
         print("PASSED")    
     
     def test_most_useful(self) :
-        ''' Test function to verify we are receiving the correct review based on
+        """ Test function to verify we are receiving the correct review based on
             project requirement- checked against the neo4j database
-        '''
+        """
 
         print()
         restaurant = get_buss("Scottsdale", "Hot Dogs")
@@ -82,9 +82,9 @@ class TestMain(unittest.TestCase):
             self.fail("FAILED")
 
     def test_is_open(self):
-        ''' Test function to verify that our function returns the correct boolean
+        """ Test function to verify that our function returns the correct boolean
             expression for when a restaurant is open or not based on user input
-        '''
+        """
 
         print()
         print("[test_is_open]: restaurant is open at a specified time")
@@ -103,10 +103,10 @@ class TestMain(unittest.TestCase):
             self.fail("FAILED")
 
     def test_get_photos(self):
-        '''
+        """
             Test function to check if the correct photo urls are returned- (compared to
             database data) and if we are removing invalid urls correctly
-        '''
+        """
         print()
         print('[test_get_photos]: should return an empty list')
         try:
