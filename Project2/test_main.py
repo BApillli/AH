@@ -96,3 +96,30 @@ class TestMain(unittest.TestCase):
             print("PASSED")
         except:
             self.fail("FAILED")
+
+    def test_get_photos(self):
+        print()
+        print(' Testing photos ...')
+        print('Should return an empty list for having no photos')
+        try:
+            self.assertAlmostEqual(get_photos('7f_Z7-b4wwRZ2BPH9x-A3A'), [])
+            print("PASSED")
+        except:
+            self.fail("FAILED")
+        
+        print()
+        print('Checking if the correct urls are received')
+        photos0 = get_photos("xTKcIQ90mluHH0HGO-sVig")
+        try:
+            self.assertAlmostEqual(photos0, [{'p.id': 'uE-6bBrl8Dks4_DDDtrOTQ', 'p.caption': ''}, {'p.id': 'MkBaQ15S1dZxkDmNF_JAGw', 'p.caption': ''}])
+            print("PASS")
+        except:
+            self.fail("FAILED")
+        
+        print()
+        print('Checking if we eliminate valid photos correctly')
+        
+        photos = []
+        for i in range(len(photos0)):
+            photos.append(photos0[i]['p.id'])
+        print(is_photo_valid(photos))
