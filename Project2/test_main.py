@@ -72,10 +72,27 @@ class TestMain(unittest.TestCase):
             self.fail("FAIL")
         print()    
         review1 = most_useful('LAoSegVNU4wx4GTA8reB6A')
-        print("Seeing if there's only nones that recent date takes priority")
+        print("Checking that there's only nones that recent date takes priority")
         result1 = {'r.text': "The truck showed up 44 min early. They still weren't ready. Its upsetting if you are not able to offer the items at least compensate your consumer. A soad cost .50 this could be seen as a sign of good faith. I won't be spending any money or time with them. I cant stress enough how one bad encounter can ruin your rep moving forward. Take care of your customers and they will remember you. I'm not suggesting that you have to give me free stuff but you do have to make some attempt at doing something other then I'm sorry. That tells me you make enough money to not care about me and my $15. Not attemp at anything, no empathy, nothing.", 'm.id': '37jU24vRukJb0ykfTJpghg', 'r.stars': 1.0, 'm.name': 'Clinton'} 
         try:
             self.assertAlmostEqual(result1, review1)
+            print("PASSED")
+        except:
+            self.fail("FAILED")
+
+    def test_is_open(self):
+        print()
+        print("... Testing whether the restaurant is open at a specified time ...")
+        try:
+            self.assertTrue(is_open('Saturday', '11:00', 'khxjYMwb_V8UovvwPVhysw'))
+            print("PASSED")
+        except:
+            self.fail("FAILED")
+
+        print()
+        print("... Testing whether we pick up whether a restaurant is closed ...")
+        try:
+            self.assertFalse(is_open('Sunday', '11:00', 'khxjYMwb_V8UovvwPVhysw'))
             print("PASSED")
         except:
             self.fail("FAILED")
