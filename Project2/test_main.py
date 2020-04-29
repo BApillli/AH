@@ -3,6 +3,13 @@ import unittest
 from main import *
 
 
+class SimpleWidgetTestCase(unittest.TestCase):
+    def setUp(self):
+        self.widget = Widget('The widget')
+
+    def tearDown(self):
+        self.widget.dispose()
+
 class TestMain(unittest.TestCase):
     # checks that the restaurants returned is in the required city 
     # and serves the required cruisine
@@ -48,7 +55,7 @@ class TestMain(unittest.TestCase):
                     self.assertGreaterEqual(a, b)
                 except ThatException:
                     self.fail("FAIL")
-
+        print("PASSED")    
     
     def test_most_useful(self) :
         print()
