@@ -60,18 +60,22 @@ class TestMain(unittest.TestCase):
     def test_most_useful(self) :
         print()
         restaurant = get_buss("Scottsdale", "Hot Dogs")
-        review = most_useful(restaurant[0]['m']['id'])
-        print(restaurant[0]['m']['id'])
-        print(review)
+        review0 = most_useful(restaurant[0]['m']['id'])
+        
         print("... Testing to see if the most useful review is returned ...")        
         print("Test to see if nones are skipped")
-        result = {'m.name': 'David', 'm.id': 'TdCeQnHVjA2FgwBnA9lx_g', 'r.text': "Simon's Hot Dogs catered our event in the park and did a TERRIFIC job. They offered a Beef and Vegan Dog and then their Columbia Dog (Pineapple, Mozzarella Cheese, Simon's Sauce, Crushed Potato Chips), German Traditional (Brown Mustard / Fresh Sauerkraut), and Wunderhund (Dill Pickles, Onions, Mustard, Mayo, Peruvian Chiles, and Bacon Bites on Top). The owner of Simons was on hand to take orders and his assistant on the grill. They made our party a GREAT Success and would recommend their catering to anyone who wants a Hot Dog menu event!", 'r.stars': 4.0}
-        # try:
-        #     self.assertAlmostEqual(result, review)
-        #     print("PASSED")
-        # except:
-        #     self.fail("FAIL")
-        
-        
-        
-            
+        result0 = {'m.name': 'David', 'm.id': 'TdCeQnHVjA2FgwBnA9lx_g', 'r.text': "Simon's Hot Dogs catered our event in the park and did a TERRIFIC job. They offered a Beef and Vegan Dog and then their Columbia Dog (Pineapple, Mozzarella Cheese, Simon's Sauce, Crushed Potato Chips), German Traditional (Brown Mustard / Fresh Sauerkraut), and Wunderhund (Dill Pickles, Onions, Mustard, Mayo, Peruvian Chiles, and Bacon Bites on Top). The owner of Simons was on hand to take orders and his assistant on the grill. They made our party a GREAT Success and would recommend their catering to anyone who wants a Hot Dog menu event!", 'r.stars': 4.0}
+        try:
+            self.assertAlmostEqual(result0, review0)
+            print("PASSED")
+        except:
+            self.fail("FAIL")
+        print()    
+        review1 = most_useful('LAoSegVNU4wx4GTA8reB6A')
+        print("Seeing if there's only nones that recent date takes priority")
+        result1 = {'r.text': "The truck showed up 44 min early. They still weren't ready. Its upsetting if you are not able to offer the items at least compensate your consumer. A soad cost .50 this could be seen as a sign of good faith. I won't be spending any money or time with them. I cant stress enough how one bad encounter can ruin your rep moving forward. Take care of your customers and they will remember you. I'm not suggesting that you have to give me free stuff but you do have to make some attempt at doing something other then I'm sorry. That tells me you make enough money to not care about me and my $15. Not attemp at anything, no empathy, nothing.", 'm.id': '37jU24vRukJb0ykfTJpghg', 'r.stars': 1.0, 'm.name': 'Clinton'} 
+        try:
+            self.assertAlmostEqual(result1, review1)
+            print("PASSED")
+        except:
+            self.fail("FAILED")
