@@ -112,7 +112,7 @@ class TestMain(unittest.TestCase):
         photos0 = get_photos("xTKcIQ90mluHH0HGO-sVig")
         try:
             self.assertAlmostEqual(photos0, [{'p.id': 'uE-6bBrl8Dks4_DDDtrOTQ', 'p.caption': ''}, {'p.id': 'MkBaQ15S1dZxkDmNF_JAGw', 'p.caption': ''}])
-            print("PASS")
+            print("PASSED")
         except:
             self.fail("FAILED")
         
@@ -121,5 +121,14 @@ class TestMain(unittest.TestCase):
         
         photos = []
         for i in range(len(photos0)):
-            photos.append(photos0[i]['p.id'])
-        print(is_photo_valid(photos))
+            photos.append('https://s3-media2.fl.yelpcdn.com/bphoto/')
+            photos[i] += photos0[i]['p.id'] + '/o.jpg'
+            
+        photos = is_photo_valid(photos)
+        try:
+            self.assertAlmostEqual(photos, ['https://s3-media2.fl.yelpcdn.com/bphoto/uE-6bBrl8Dks4_DDDtrOTQ/o.jpg', 'https://s3-media2.fl.yelpcdn.com/bphoto/MkBaQ15S1dZxkDmNF_JAGw/o.jpg'])
+            print("PASSED")
+        except:
+            self.fail("FAILED")
+
+        
