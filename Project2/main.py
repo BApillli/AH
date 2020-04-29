@@ -9,7 +9,6 @@ graph = Graph("bolt://35.224.32.106:8000", auth=("neo4j", "yelpme"))
 
 def best_business(city, day, time, cuisine):
     """Returns the best restaurant based on the query.
-
        Keyword arguments:
        city -- The city the restaurant must be in
        day -- The day of the week that the restaurant must be open on
@@ -73,7 +72,6 @@ def get_hours(day, id):
 def is_open(day, time, id):
     """Checks if the restaurant is open at the specified day and time. 
        Returns true if it's open, and false if it is not open.
-
        Keyword arguments:
        day -- The day of the week
        time -- The time of the day (H:M)
@@ -103,7 +101,6 @@ def is_open(day, time, id):
 
 def get_buss(city, cruisine):
     """ Returns list of restaurants ordered by stars in descending order. 
-
         Keyword arguments:
         city -- The city the restaurant must be in
         cuisine -- The type of cuisine the restaurant must offer
@@ -113,7 +110,6 @@ def get_buss(city, cruisine):
 
 def most_useful(buss_id):
     """Returns the user with the most useful review as well as the review.
-
        Keyword arguments:
        buss_id -- The id of the business that the user is reviewing.
     """
@@ -133,7 +129,7 @@ def most_useful(buss_id):
     #skipping those nones...............................................................
     while (useful is None) :
         i += 1
-        if (i == len(store)-1):
+        if (i == len(store)):
             break
         useful = store[i]['r.useful']
     
@@ -152,7 +148,6 @@ def most_useful(buss_id):
 
 def review_count(business_id):
     """Returns the review count of a business
-
        Keyword arguments:
        business_id -- the id of the business
     """   
@@ -161,7 +156,6 @@ def review_count(business_id):
 
 def get_photos(business_id):
     """Returns a list of photos of the business
-
        Keyword arguments:
        business_id -- The id of the business
     """   
@@ -170,7 +164,6 @@ def get_photos(business_id):
 
 def get_top_five(user_id, city, cuisine, day, time):
     """Returns the top five restaurants ordered by stars in descending order.
-
        Keyword arguments:
        user_id -- The id of the user with the most useful review
        city -- The city that the restaurants have to be in
@@ -197,7 +190,6 @@ def get_top_five(user_id, city, cuisine, day, time):
 
 def get_default_res(city, id):
     """Returns list of restaurants in a city ordered by stars in descending order.
-
        Keyword arguments:
        city -- The city that the restaurants have to be in
        id -- The id of the business that cannot be part of the list
