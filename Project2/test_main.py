@@ -23,7 +23,7 @@ class TestMain(unittest.TestCase):
         for i in range(0, len(hold)):
             try:
                 self.assertAlmostEqual(hold[i]['m']['city'], "Scottsdale")
-            except ThatException:
+            except:
                 self.fail("FAILED")
             self.assertAlmostEqual(hold[i]['n']['id'], "Hot Dogs")
             sort.append(hold[i]['m']['stars'])
@@ -36,7 +36,7 @@ class TestMain(unittest.TestCase):
         try:
             self.assertAlmostEqual(sort1, sort)
             print("PASSED")
-        except ThatException:
+        except:
             self.fail("FAIL")
 
         #check if ties are broken
@@ -53,7 +53,7 @@ class TestMain(unittest.TestCase):
                 b = hold2[i+1]['m']['review_count']
                 try:
                     self.assertGreaterEqual(a, b)
-                except ThatException:
+                except:
                     self.fail("FAIL")
         print("PASSED")    
     
@@ -61,13 +61,15 @@ class TestMain(unittest.TestCase):
         print()
         restaurant = get_buss("Scottsdale", "Hot Dogs")
         review = most_useful(restaurant[0]['m']['id'])
-        print("Testing to see if the most useful review is returned")
-        print()
+        print("... Testing to see if the most useful review is returned ...")        
+        print("Test to see if nones are skipped")
+        result = {'m.name': 'David', 'm.id': 'TdCeQnHVjA2FgwBnA9lx_g', 'r.text': "Simon's Hot Dogs catered our event in the park and did a TERRIFIC job. They offered a Beef and Vegan Dog and then their Columbia Dog (Pineapple, Mozzarella Cheese, Simon's Sauce, Crushed Potato Chips), German Traditional (Brown Mustard / Fresh Sauerkraut), and Wunderhund (Dill Pickles, Onions, Mustard, Mayo, Peruvian Chiles, and Bacon Bites on Top). The owner of Simons was on hand to take orders and his assistant on the grill. They made our party a GREAT Success and would recommend their catering to anyone who wants a Hot Dog menu event!", 'r.stars': 4.0}
+        try:
+            self.assertAlmostEqual(result, review)
+            print("PASSED")
+        except:
+            self.fail("FAIL")
         
-
-        # for i in range(0, len(restaurant)) :
-        #     sort.append(restaurant[i]['m']['stars'])
-        # sort1 = sorted(sort, reverse=True)
         
         
             
