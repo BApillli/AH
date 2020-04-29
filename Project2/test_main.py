@@ -11,8 +11,10 @@ class SimpleWidgetTestCase(unittest.TestCase):
         self.widget.dispose()
 
 class TestMain(unittest.TestCase):
-    # checks that the restaurants returned is in the required city 
-    # and serves the required cruisine
+    ''' Test function to verify project requirements for best restaurant
+        returned is correct
+    '''
+
     def test_get_buss(self):
         hold = get_buss("Scottsdale", "Hot Dogs")
         sort = []
@@ -53,6 +55,10 @@ class TestMain(unittest.TestCase):
         print("PASSED")    
     
     def test_most_useful(self) :
+        ''' Test function to verify we are receiving the correct review based on
+            project requirement- checked against the neo4j database
+        '''
+
         print()
         restaurant = get_buss("Scottsdale", "Hot Dogs")
         review0 = most_useful(restaurant[0]['m']['id'])
@@ -76,6 +82,10 @@ class TestMain(unittest.TestCase):
             self.fail("FAILED")
 
     def test_is_open(self):
+        ''' Test function to verify that our function returns the correct boolean
+            expression for when a restaurant is open or not based on user input
+        '''
+
         print()
         print("[test_is_open]: restaurant is open at a specified time")
         try:
@@ -93,6 +103,10 @@ class TestMain(unittest.TestCase):
             self.fail("FAILED")
 
     def test_get_photos(self):
+        '''
+            Test function to check if the correct photo urls are returned- (compared to
+            database data) and if we are removing invalid urls correctly
+        '''
         print()
         print('[test_get_photos]: should return an empty list')
         try:
@@ -126,6 +140,10 @@ class TestMain(unittest.TestCase):
             self.fail("FAILED")
 
     def test_get_top_five(self):
+        ''' Test function to verify that the new restaurant recommendations meets the user's
+            requirements
+        '''
+
         print()
         print('[test_get_top_five]: tests [1] city, [2] cruisine, [3] stars condition, [4] review count condition')
 
