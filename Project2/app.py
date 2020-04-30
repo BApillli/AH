@@ -23,7 +23,7 @@ def index():
         if len(name) != 0:    
             # gets the review
             review = main.most_useful(str(name[0]))
-            if review != '':
+            if review != []:
 
                 # gets the user of the review
                 user = review['m.id']
